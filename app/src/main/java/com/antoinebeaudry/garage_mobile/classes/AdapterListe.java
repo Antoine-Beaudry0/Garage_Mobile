@@ -15,7 +15,7 @@ import java.util.List;
 
 public class AdapterListe  extends RecyclerView.Adapter{
 
-    List<Notifications> liste;
+    List<Cnotif> liste;
     interfaceNotification interfaceNotification;
 
 
@@ -24,7 +24,7 @@ public class AdapterListe  extends RecyclerView.Adapter{
         public void gestionClick(int position , Notifications notification);
     }
 
-    public AdapterListe(List<Notifications> liste, interfaceNotification  interfaceNotification)
+    public AdapterListe(List<Cnotif> liste, interfaceNotification  interfaceNotification)
     {
         this.liste = liste;
         this.interfaceNotification = interfaceNotification;
@@ -63,10 +63,10 @@ public class AdapterListe  extends RecyclerView.Adapter{
         public MonViewHolder(@NonNull View itemView) {
             super(itemView);
 
-            tvnom = itemView.findViewById(R.id.idNom);
-            tvDate= itemView.findViewById(R.id.idDate);
-            tvDateHeurDeb = itemView.findViewById(R.id.idDateDeb);
-            tvDateHeurFin = itemView.findViewById(R.id.idDateF);
+            tvnom = itemView.findViewById(R.id.tvNom);
+            tvDate= itemView.findViewById(R.id.tvDate);
+            tvDateHeurDeb = itemView.findViewById(R.id.tvDateDeb);
+            tvDateHeurFin = itemView.findViewById(R.id.tvDateF);
 
 
         }

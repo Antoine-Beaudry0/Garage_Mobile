@@ -49,6 +49,12 @@
                 android:textAlignment="textStart"
                 android:textColor="#FF7474"
                 android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btnNotification"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Notification" />
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>

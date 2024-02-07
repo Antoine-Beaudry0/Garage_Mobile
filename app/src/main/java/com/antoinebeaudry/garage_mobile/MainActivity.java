@@ -2,13 +2,35 @@ package com.antoinebeaudry.garage_mobile;
 
 import androidx.appcompat.app.AppCompatActivity;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.View;
+import android.widget.Button;
 
 public class MainActivity extends AppCompatActivity {
 
+
+    Button btnNotif;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_profile_client);
+        setContentView(R.layout.activity_main);
+
+        btnNotif = findViewById(R.id.btnNotification);
+
+
+        btnNotif.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), Notifications.class);
+                v.getContext().startActivity(intent);
+            }
+        });
+
+
     }
+
+
+
+
 }

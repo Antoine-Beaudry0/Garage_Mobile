@@ -13,10 +13,9 @@ import com.antoinebeaudry.garage_mobile.classes.Cnotif;
 
 public class Notifications extends AppCompatActivity implements AdapterListe.interfaceNotification{
 
-    List<Cnotif> liste = new ArrayList<Cnotif>();
+    List<Cnotif> liste = new ArrayList<>();
 
     RecyclerView rv;
-
     AdapterListe adapterListe;
 
     @Override
@@ -28,7 +27,12 @@ public class Notifications extends AppCompatActivity implements AdapterListe.int
 
 
         rv.setLayoutManager(new LinearLayoutManager(this));// sa aussi marche pour le vertical
-         liste.add(new Cnotif("Joyce",  "Joyce0", "joyc9", "test"));
+        liste.add(new Cnotif("Joyce",  "Joyce0", "joyc9", "test"));
+
+        adapterListe = new AdapterListe(liste , this);  // creation dune adapterliste pour pouvoir afficher la liste avec le recycleview
+
+        //adapterListe = ((AdapterListe)rv.getAdapter());
+        rv.setAdapter(new AdapterListe(liste, this));
     }
 
     @Override
