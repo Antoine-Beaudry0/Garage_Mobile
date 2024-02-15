@@ -4,20 +4,21 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="@drawable/ic_backgroung"
     tools:context=".Connexion">
 
     <EditText
         android:id="@+id/txconnexion"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="104dp"
+        android:layout_width="278dp"
+        android:layout_height="44dp"
+        android:layout_marginTop="52dp"
         android:ems="10"
         android:inputType="text"
         android:text="Email"
-        android:textColorHint="#120F0F"
-        android:textSize="24sp"
+        android:textColorHint="#382160"
+        android:textSize="20sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.624"
+        app:layout_constraintHorizontal_bias="0.368"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
@@ -26,22 +27,21 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginTop="36dp"
+        android:backgroundTint="#5FAFA8"
         android:ems="10"
         android:hint="Mot de passe"
         android:inputType="textPassword"
-        android:textColorHint="#070707"
+        android:textColorHint="#151918"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.624"
+        app:layout_constraintHorizontal_bias="0.368"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/txconnexion" />
 
     <Button
         android:id="@+id/btconnexion"
-        android:layout_width="195dp"
-        android:layout_height="61dp"
-        android:background="#006963"
-        android:backgroundTint="#006963"
+        android:layout_width="235dp"
+        android:layout_height="51dp"
         android:text="Connexion"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
@@ -54,11 +54,20 @@
         android:id="@+id/imageView4"
         android:layout_width="242dp"
         android:layout_height="49dp"
-        android:layout_marginTop="140dp"
+        android:layout_marginTop="40dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.568"
+        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView7"
+        app:srcCompat="@drawable/ic_logo" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="400dp"
+        android:layout_height="87dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="@drawable/ic_logo" />
+        app:srcCompat="@drawable/wave" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>

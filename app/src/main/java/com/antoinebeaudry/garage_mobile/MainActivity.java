@@ -28,6 +28,7 @@ public class MainActivity extends AppCompatActivity {
     Context context;
 
     Button menu1;
+    BottomNavigationView bottomNavigationView;
 
 
 
@@ -42,6 +43,7 @@ public class MainActivity extends AppCompatActivity {
 
         btnNotif = findViewById(R.id.btnNotification);
         btnConnexion = findViewById(R.id.btnConnexion);
+        bottomNavigationView = findViewById(R.id.bottom_navigation);
 
 
         btnNotif.setOnClickListener(new View.OnClickListener() {
@@ -57,6 +59,29 @@ public class MainActivity extends AppCompatActivity {
             public void onClick(View v) {
                 Intent intent = new Intent(v.getContext(),LoginActivity.class);
                 v.getContext().startActivity(intent);
+            }
+        });
+
+        bottomNavigationView.setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.menu_item1) {
+                    Toast.makeText(MainActivity.this,"yyyy",Toast.LENGTH_LONG).show();
+                    return true;
+                }
+                else if (item.getItemId() == R.id.menu_item2) {
+                    Toast.makeText(MainActivity.this,"Ajouter",Toast.LENGTH_LONG).show();
+                    return true;
+                }
+                else if (item.getItemId() == R.id.menu_item3) {
+                    Toast.makeText(MainActivity.this,"Ajouter",Toast.LENGTH_LONG).show();
+                    return true;
+                }
+                else if (item.getItemId() == R.id.menu_item4) {
+                    Toast.makeText(MainActivity.this,"Ajouter",Toast.LENGTH_LONG).show();
+                    return true;
+                }
+                return false;
             }
         });
 
@@ -80,22 +105,6 @@ public class MainActivity extends AppCompatActivity {
         }
         else if (item.getItemId() == R.id.itemSearch) {
             Toast.makeText(this,"good",Toast.LENGTH_LONG).show();
-            return true;
-        }
-        else if (item.getItemId() == R.id.menu_item1) {
-            Toast.makeText(this,"yyyy",Toast.LENGTH_LONG).show();
-            return true;
-        }
-        else if (item.getItemId() == R.id.menu_item2) {
-            Toast.makeText(this,"Ajouter",Toast.LENGTH_LONG).show();
-            return true;
-        }
-        else if (item.getItemId() == R.id.menu_item3) {
-            Toast.makeText(this,"Ajouter",Toast.LENGTH_LONG).show();
-            return true;
-        }
-        else if (item.getItemId() == R.id.menu_item4) {
-            Toast.makeText(this,"Ajouter",Toast.LENGTH_LONG).show();
             return true;
         }
         else
