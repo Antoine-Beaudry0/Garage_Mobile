@@ -48,7 +48,7 @@
                 android:layout_height="wrap_content"
                 android:text="TextView"
                 android:textColor="#EBEBEB"
-                android:textSize="16sp" />
+                android:textSize="24sp" />
 
             <TextView
                 android:id="@+id/tvDateF"
@@ -59,6 +59,36 @@
                 android:textAlignment="textStart"
                 android:textColor="#FF7474"
                 android:textSize="24sp" />
+
+            <LinearLayout
+                android:layout_width="362dp"
+                android:layout_height="70dp"
+                android:orientation="horizontal">
+
+                <Button
+                    android:id="@+id/btaccepter"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#16F126"
+                    android:text="Accepter" />
+
+                <Button
+                    android:id="@+id/btsaispas"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#504D4D"
+                    android:text="Je sais pas" />
+
+                <Button
+                    android:id="@+id/btRefuser"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_weight="1"
+                    android:backgroundTint="#D53131"
+                    android:text="Refuser" />
+            </LinearLayout>
 
         </LinearLayout>
 

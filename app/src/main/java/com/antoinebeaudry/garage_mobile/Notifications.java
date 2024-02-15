@@ -32,7 +32,9 @@ public class Notifications extends AppCompatActivity implements AdapterListe.int
 
 
         rv.setLayoutManager(new LinearLayoutManager(this));// sa aussi marche pour le vertical
-        liste.add(new Cnotif("Joyce",  "Joyce0", "joyc9", "test"));
+        liste.add(new Cnotif("Joyce",  "10-02-2023", "10:00am", "12:00pm"));
+        liste.add(new Cnotif("Vanelle",  "10-02-2023", "11:00am", "1:00pm"));
+        liste.add(new Cnotif("Tsatia",  "10-02-2023", "12:00pm", "6:00pm"));
 
         adapterListe = new AdapterListe(liste , this);  // creation dune adapterliste pour pouvoir afficher la liste avec le recycleview
 
