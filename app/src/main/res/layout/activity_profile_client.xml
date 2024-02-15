@@ -7,119 +7,141 @@
     tools:context=".profileClient">
 
     <TextView
-        android:id="@+id/txNom"
-        android:layout_width="154dp"
-        android:layout_height="61dp"
-        android:layout_marginTop="104dp"
-        android:text="Nom "
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.28"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-
-    <TextView
-        android:id="@+id/txEmail"
-        android:layout_width="160dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="60dp"
-        android:text="Email"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.329"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txNom" />
-
-    <TextView
-        android:id="@+id/txTelephone"
-        android:layout_width="170dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="64dp"
-        android:text="Telephone"
-        android:textSize="34sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.302"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txEmail" />
-
-    <ImageView
-        android:id="@+id/iconNom"
-        android:layout_width="61dp"
-        android:layout_height="45dp"
-        app:layout_constraintBottom_toBottomOf="@+id/txNom"
-        app:layout_constraintEnd_toStartOf="@+id/txNom"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txNom"
-        app:srcCompat="@drawable/iconperson" />
-
-    <ImageView
-        android:id="@+id/iconphone"
-        android:layout_width="67dp"
-        android:layout_height="51dp"
-        app:layout_constraintBottom_toBottomOf="@+id/txTelephone"
-        app:layout_constraintEnd_toStartOf="@+id/txTelephone"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txTelephone"
-        app:srcCompat="@drawable/iconphone" />
-
-    <ImageView
-        android:id="@+id/imageView3"
-        android:layout_width="62dp"
-        android:layout_height="46dp"
-        app:layout_constraintBottom_toBottomOf="@+id/txEmail"
-        app:layout_constraintEnd_toStartOf="@+id/txEmail"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="@+id/txEmail"
-        app:srcCompat="@drawable/emailicon" />
-
-    <TextView
         android:id="@+id/txinfoAuto"
-        android:layout_width="390dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="28dp"
+        android:layout_width="400dp"
+        android:layout_height="64dp"
+        android:layout_marginStart="20dp"
+        android:layout_marginTop="124dp"
         android:text="Informations Sur Ma Voiture"
         android:textAlignment="center"
+        android:textColor="#121212"
+        android:textColorHint="#151414"
         android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.238"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txTelephone" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout4" />
 
-    <TextView
-        android:id="@+id/txMarque"
-        android:layout_width="154dp"
-        android:layout_height="47dp"
-        android:layout_marginTop="28dp"
-        android:text="Marque"
-        android:textSize="34sp"
+    <LinearLayout
+        android:id="@+id/linearLayout2"
+        android:layout_width="357dp"
+        android:layout_height="59dp"
+        android:orientation="horizontal"
+        tools:layout_editor_absoluteX="16dp"
+        tools:layout_editor_absoluteY="52dp">
+
+        <ImageView
+            android:id="@+id/iconNom"
+            android:layout_width="87dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/iconperson" />
+
+        <EditText
+            android:id="@+id/editTextText"
+            android:layout_width="275dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="text"
+            android:text="Name" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout3"
+        android:layout_width="365dp"
+        android:layout_height="64dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.062"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txinfoAuto" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout2">
 
-    <TextView
-        android:id="@+id/txAnnee"
-        android:layout_width="145dp"
-        android:layout_height="49dp"
-        android:layout_marginTop="32dp"
-        android:text="Annee"
-        android:textSize="34sp"
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="81dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/emailicon" />
+
+        <EditText
+            android:id="@+id/editTextText2"
+            android:layout_width="279dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1"
+            android:ems="10"
+            android:inputType="text"
+            android:text="Name" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/linearLayout4"
+        android:layout_width="360dp"
+        android:layout_height="66dp"
+        android:orientation="horizontal"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.06"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txMarque" />
+        app:layout_constraintTop_toBottomOf="@+id/linearLayout3">
 
-    <TextView
-        android:id="@+id/txModele"
-        android:layout_width="150dp"
-        android:layout_height="42dp"
-        android:layout_marginTop="32dp"
-        android:text="Modele"
-        android:textSize="34sp"
+        <ImageView
+            android:id="@+id/iconphone"
+            android:layout_width="71dp"
+            android:layout_height="match_parent"
+            app:srcCompat="@drawable/iconphone" />
+
+        <TextView
+            android:id="@+id/txTelephone"
+            android:layout_width="291dp"
+            android:layout_height="match_parent"
+            android:text="Telephone"
+            android:textSize="34sp" />
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="345dp"
+        android:layout_height="179dp"
+        android:orientation="vertical"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.042"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/txAnnee"
-        app:layout_constraintVertical_bias="0.0" />
+        app:layout_constraintTop_toBottomOf="@+id/txinfoAuto">
+
+        <EditText
+            android:id="@+id/editTextText3"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Marque"
+            android:inputType="text"
+            android:textColorHint="#101010"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editTextText4"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:ems="10"
+            android:hint="Annee"
+            android:inputType="text"
+            android:textColorHint="#060607"
+            android:textSize="24sp" />
+
+        <EditText
+            android:id="@+id/editTextText5"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:ems="10"
+            android:hint="name"
+            android:inputType="text"
+            android:textColorHint="#070606"
+            android:textSize="24sp" />
+    </LinearLayout>
+
+    <ImageView
+        android:id="@+id/imageView6"
+        android:layout_width="336dp"
+        android:layout_height="32dp"
+        android:layout_weight="1"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/wave" />
+
 </androidx.constraintlayout.widget.ConstraintLayout>

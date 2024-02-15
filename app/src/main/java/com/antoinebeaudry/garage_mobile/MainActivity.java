@@ -6,6 +6,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
+import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
@@ -29,7 +30,7 @@ public class MainActivity extends AppCompatActivity {
     Button menu1;
 
 
-    BottomNavigationView bottomNavigationView;
+
 
 
     @Override
@@ -59,25 +60,6 @@ public class MainActivity extends AppCompatActivity {
             }
         });
 
-        /*bottomNavigationView.setOnNavigationItemSelectedListener(item -> {
-            switch (item.getItemId()) {
-                case R.id.menu_item1:
-                    Toast.makeText(context,"CANCEL", Toast.LENGTH_LONG).show();
-                    return true;
-                case R.id.menu_item2:
-                    // Actions à effectuer lorsque le deuxième onglet est sélectionné
-                    return true;
-                case R.id.menu_item3:
-                    // Actions à effectuer lorsque le troisième onglet est sélectionné
-                    return true;
-                // Ajoutez des cas pour chaque élément de menu si nécessaire
-            }
-            return false;*/
-        //});
-
-
-
-
 
     }
     @Override
@@ -86,6 +68,7 @@ public class MainActivity extends AppCompatActivity {
         inflater.inflate(R.menu.mon_menu,menu);
         return true;
     }
+
 
     @Override
     public boolean onOptionsItemSelected(@NonNull MenuItem item) {
@@ -111,7 +94,13 @@ public class MainActivity extends AppCompatActivity {
             Toast.makeText(this,"Ajouter",Toast.LENGTH_LONG).show();
             return true;
         }
-        return super.onOptionsItemSelected(item);
+        else if (item.getItemId() == R.id.menu_item4) {
+            Toast.makeText(this,"Ajouter",Toast.LENGTH_LONG).show();
+            return true;
+        }
+        else
+            return super.onOptionsItemSelected(item);
+
 
 
     }

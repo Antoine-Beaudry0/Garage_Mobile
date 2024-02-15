@@ -5,8 +5,8 @@
     android:id="@+id/container"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#44756D"
-    android:backgroundTint="#44756D"
+    android:background="@drawable/ic_backgroung"
+    android:backgroundTint="#044339"
     android:backgroundTintMode="multiply"
     android:hapticFeedbackEnabled="false"
     android:paddingLeft="@dimen/activity_horizontal_margin"
@@ -18,16 +18,16 @@
 
     <EditText
         android:id="@+id/username"
-        android:layout_width="396dp"
-        android:layout_height="51dp"
+        android:layout_width="379dp"
+        android:layout_height="59dp"
         android:layout_marginTop="10dp"
         android:autofillHints="@string/prompt_email"
         android:background="#FBFAFA"
         android:backgroundTint="#FBFAFA"
-        android:hint="@string/prompt_email"
+        android:hint="Email"
         android:inputType="textEmailAddress"
         android:selectAllOnFocus="true"
-        android:textColorHint="#0E0D0D"
+        android:textColorHint="#090808"
         android:textColorLink="#ECAAAA"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
@@ -37,13 +37,13 @@
 
     <EditText
         android:id="@+id/password"
-        android:layout_width="384dp"
-        android:layout_height="48dp"
+        android:layout_width="369dp"
+        android:layout_height="66dp"
         android:layout_marginTop="20dp"
         android:autofillHints="@string/prompt_password"
         android:background="#FBFAFA"
         android:backgroundTint="#FBFAFA"
-        android:hint="@string/prompt_password"
+        android:hint="password"
         android:imeActionLabel="@string/action_sign_in_short"
         android:imeOptions="actionDone"
         android:inputType="textPassword"
@@ -57,17 +57,16 @@
 
     <Button
         android:id="@+id/login"
-        android:layout_width="249dp"
-        android:layout_height="46dp"
+        android:layout_width="261dp"
+        android:layout_height="66dp"
         android:layout_gravity="start"
-        android:layout_marginTop="44dp"
+        android:layout_marginTop="52dp"
         android:backgroundTint="#EAE3E3"
         android:enabled="true"
         android:text="Connexion"
         android:textColor="#1B1919"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.571"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/password" />
 
@@ -87,8 +86,8 @@
 
     <Button
         android:id="@+id/button2"
-        android:layout_width="249dp"
-        android:layout_height="46dp"
+        android:layout_width="254dp"
+        android:layout_height="60dp"
         android:layout_marginTop="80dp"
         android:backgroundTint="#EAE3E3"
         android:text="Inscription"
@@ -96,16 +95,16 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.569"
+        app:layout_constraintHorizontal_bias="0.6"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/login"
-        app:layout_constraintVertical_bias="0.108" />
+        app:layout_constraintVertical_bias="0.0" />
 
     <TextView
         android:id="@+id/textView"
         android:layout_width="184dp"
         android:layout_height="38dp"
-        android:layout_marginTop="60dp"
+        android:layout_marginTop="40dp"
         android:backgroundTint="#191818"
         android:text="Adresse Email*"
         android:textColor="#EAE0E0"

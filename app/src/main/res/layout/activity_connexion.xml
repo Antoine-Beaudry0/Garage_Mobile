@@ -14,6 +14,7 @@
         android:ems="10"
         android:inputType="text"
         android:text="Email"
+        android:textColorHint="#120F0F"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.624"
@@ -28,6 +29,7 @@
         android:ems="10"
         android:hint="Mot de passe"
         android:inputType="textPassword"
+        android:textColorHint="#070707"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.624"
@@ -36,8 +38,8 @@
 
     <Button
         android:id="@+id/btconnexion"
-        android:layout_width="189dp"
-        android:layout_height="59dp"
+        android:layout_width="195dp"
+        android:layout_height="61dp"
         android:background="#006963"
         android:backgroundTint="#006963"
         android:text="Connexion"
@@ -52,9 +54,9 @@
         android:id="@+id/imageView4"
         android:layout_width="242dp"
         android:layout_height="49dp"
-        android:layout_marginTop="96dp"
+        android:layout_marginTop="140dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.441"
+        app:layout_constraintHorizontal_bias="0.568"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/ic_logo" />

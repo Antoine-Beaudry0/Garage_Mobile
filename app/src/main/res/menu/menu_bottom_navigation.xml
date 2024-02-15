@@ -15,4 +15,9 @@
         android:title="Profil"
         android:icon="@drawable/ic_profile"
         app:showAsAction="always"/>
+    <item
+        android:id="@+id/menu_item4"
+        android:title="Paramettre"
+        android:icon="@drawable/ic_setting"
+        app:showAsAction="always"/>
 </menu>
