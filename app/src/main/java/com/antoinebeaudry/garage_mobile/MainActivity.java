@@ -2,22 +2,34 @@ package com.antoinebeaudry.garage_mobile;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
+import androidx.recyclerview.widget.RecyclerView;
 
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.util.Log;
 import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
-import com.antoinebeaudry.garage_mobile.R;
 
 
-import com.antoinebeaudry.garage_mobile.ui.login.LoginActivity;
+import com.antoinebeaudry.garage_mobile.classes.AdapterListe;
+import com.antoinebeaudry.garage_mobile.classes.InterfaceServeur;
+import com.antoinebeaudry.garage_mobile.classes.RetrofitInstance;
+import com.antoinebeaudry.garage_mobile.classes.Utilisateur;
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.io.IOException;
+import java.util.List;
+
+import okhttp3.ResponseBody;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 
 public class MainActivity extends AppCompatActivity {
@@ -27,7 +39,7 @@ public class MainActivity extends AppCompatActivity {
     Button btnConnexion;
     Context context;
 
-    Button menu1;
+
     BottomNavigationView bottomNavigationView;
 
 
@@ -46,6 +58,7 @@ public class MainActivity extends AppCompatActivity {
         bottomNavigationView = findViewById(R.id.bottom_navigation);
 
 
+
         btnNotif.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -57,7 +70,7 @@ public class MainActivity extends AppCompatActivity {
         btnConnexion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Intent intent = new Intent(v.getContext(),LoginActivity.class);
+                Intent intent = new Intent(v.getContext(),Connexion.class);
                 v.getContext().startActivity(intent);
             }
         });
@@ -112,6 +125,112 @@ public class MainActivity extends AppCompatActivity {
 
 
 
+    }
+
+   /* public void gestionClick(View v)
+    {
+        //getUtilisateur();
+        //getUtilisateurByid();
+        //ajouterutilisateur();
+        getListUtilisateursBiss();
+    }
+
+    public void ajouterutilisateur() {
+        if (tb.getText().toString().trim().isEmpty() || tbPrenom.getText().toString().trim().isEmpty())
+        {
+            Toast.makeText(MainActivity.this, "UNE ERREUR", Toast.LENGTH_LONG).show();
+        }
+
+        else {
+
+
+            InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
+            Call<Boolean> call = serveur.ajoutUtilisateur("Lavoie", "Rose");
+
+            call.enqueue(new Callback<Boolean>() {
+                @Override
+                public void onResponse(Call<Boolean> call, Response<Boolean> response) {
+                    boolean resultat = response.body();
+                }
+
+                @Override
+                public void onFailure(Call<Boolean> call, Throwable t) {
+                    Toast.makeText(MainActivity.this, "UNE ERREUR", Toast.LENGTH_LONG).show();
+                }
+            });
+        }
+    }
+
+    public void getUtilisateur()
+    {
+        InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
+
+        Call<List<Utilisateur>> call = serveur.getListeUtilisateurs();
+
+        call.enqueue(new Callback<List<Utilisateur>>() {
+            RecyclerView rvUtilisateurs;
+            AdapterListe adapter;
+            @Override
+            public void onResponse(Call<List<Utilisateur>> call, Response<List<Utilisateur>> response) {
+                List<Utilisateur> liste2 = response.body();
+                adapter = new AdapterListe(liste2);
+                rvUtilisateurs.setAdapter(adapter);
+            }
+
+            @Override
+            public void onFailure(Call<List<Utilisateur>> call, Throwable t) {
+                Toast.makeText(MainActivity.this,"UNE ERREUR",Toast.LENGTH_LONG).show();
+            }
+        });
+    }
+*/
+
+    public void getUtilisateurByid()
+    {
+        InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
+
+        Call<Utilisateur> call = serveur.getUtilisateurByid(1);
+
+        call.enqueue(new Callback<Utilisateur>() {
+            @Override
+            public void onResponse(Call<Utilisateur> call, Response<Utilisateur> response) {
+                Utilisateur utilisateur = response.body();
+
+               // tvtexte.setText(utilisateur.getNom() + " " + utilisateur.getPrenom());
+            }
+
+            @Override
+            public void onFailure(Call<Utilisateur> call, Throwable t) {
+                Toast.makeText(MainActivity.this,"UNE ERREUR",Toast.LENGTH_LONG).show();
+
+            }
+        });
+
+
+
+    }
+    public void getListUtilisateursBiss() {
+        InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
+        Call<ResponseBody> call = serveur.getListeUtilisateursBiss();
+
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                ResponseBody reponse = response.body();
+
+                try {
+                    String texte = reponse.string();
+                    //  tvtexte.setText(texte);
+                } catch (IOException e) {
+                    throw new RuntimeException();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+
+            }
+        });
     }
 
 
