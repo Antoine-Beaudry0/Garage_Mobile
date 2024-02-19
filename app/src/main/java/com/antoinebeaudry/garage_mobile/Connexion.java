@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
+import android.widget.EditText;
 import android.widget.TextView;
 import android.widget.Toast;
 
@@ -19,7 +20,11 @@ import retrofit2.Response;
 public class Connexion extends AppCompatActivity {
 
 
-    TextView tbemail;
+    EditText tbemail;
+    EditText tbadresse;
+    EditText tbphone;
+    EditText tbnom;
+    EditText tbprenom;
     TextView tbpassword;
 
     @Override
@@ -29,6 +34,10 @@ public class Connexion extends AppCompatActivity {
 
         tbemail = findViewById(R.id.tbemail);
         tbpassword = findViewById(R.id.tbpassword);
+        tbnom = findViewById(R.id.tbnom);
+        tbprenom = findViewById(R.id.tbprenom);
+        tbphone = findViewById(R.id.tbphone);
+        tbadresse = findViewById(R.id.tbadresse);
     }
 
     public void gestionClick(View v)
@@ -40,7 +49,8 @@ public class Connexion extends AppCompatActivity {
     }
 
     public void ajouterutilisateur() {
-        if (tbemail.getText().toString().trim().isEmpty() || tbpassword.getText().toString().trim().isEmpty())
+        if (tbemail.getText().toString().trim().isEmpty() || tbpassword.getText().toString().trim().isEmpty() || tbnom.getText().toString().trim().isEmpty()
+                || tbprenom.getText().toString().trim().isEmpty() || tbphone.getText().toString().trim().isEmpty() || tbadresse.getText().toString().trim().isEmpty())
         {
             Toast.makeText(Connexion.this, "UNE ERREUR", Toast.LENGTH_LONG).show();
         }
@@ -49,7 +59,7 @@ public class Connexion extends AppCompatActivity {
 
 
             InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
-            Call<Boolean> call = serveur.ajoutUtilisateur("Lavoie", "Rose");
+            Call<Boolean> call = serveur.ajoutUtilisateur("$nom","$email","$adresse","$telephone","$prenom","$password");
 
             call.enqueue(new Callback<Boolean>() {
                 @Override

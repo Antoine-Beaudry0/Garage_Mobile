@@ -26,5 +26,6 @@ public interface InterfaceServeur {
     @POST("/appli/addUtilisateur.php")
     @FormUrlEncoded
     Call<Boolean> ajoutUtilisateur(@Field("nom") String nom,
-                                   @Field("email") String email);
+                                   @Field("email") String email, @Field("adresse") String adresse, @Field("telephone") String telephone, @Field("prenom") String prenom,
+     @Field("password") String password);
 }

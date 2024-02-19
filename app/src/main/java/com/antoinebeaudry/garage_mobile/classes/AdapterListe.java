@@ -16,7 +16,7 @@ import java.util.List;
 public class AdapterListe  extends RecyclerView.Adapter{
 
     List<Cnotif> liste;
-    List<Utilisateur> liste2;
+    //List<Utilisateur> liste2;
     interfaceNotification interfaceNotification;
 
 
@@ -33,10 +33,10 @@ public class AdapterListe  extends RecyclerView.Adapter{
 
 
 
-    public AdapterListe(List<Utilisateur> liste2)
+/*    //public AdapterListe(List<Utilisateur> liste2)
     {
         this.liste2 = liste2;
-    }
+    }*/
 
     @NonNull
     @Override

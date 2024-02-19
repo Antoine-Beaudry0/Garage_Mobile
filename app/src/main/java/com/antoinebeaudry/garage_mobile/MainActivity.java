@@ -18,6 +18,7 @@ import android.widget.Toast;
 
 
 import com.antoinebeaudry.garage_mobile.classes.AdapterListe;
+import com.antoinebeaudry.garage_mobile.classes.AdapterUtilisateurs;
 import com.antoinebeaudry.garage_mobile.classes.InterfaceServeur;
 import com.antoinebeaudry.garage_mobile.classes.RetrofitInstance;
 import com.antoinebeaudry.garage_mobile.classes.Utilisateur;
@@ -127,7 +128,7 @@ public class MainActivity extends AppCompatActivity {
 
     }
 
-   /* public void gestionClick(View v)
+   public void gestionClick(View v)
     {
         //getUtilisateur();
         //getUtilisateurByid();
@@ -135,7 +136,7 @@ public class MainActivity extends AppCompatActivity {
         getListUtilisateursBiss();
     }
 
-    public void ajouterutilisateur() {
+   /* public void ajouterutilisateur() {
         if (tb.getText().toString().trim().isEmpty() || tbPrenom.getText().toString().trim().isEmpty())
         {
             Toast.makeText(MainActivity.this, "UNE ERREUR", Toast.LENGTH_LONG).show();
@@ -159,7 +160,7 @@ public class MainActivity extends AppCompatActivity {
                 }
             });
         }
-    }
+    }*/
 
     public void getUtilisateur()
     {
@@ -169,11 +170,11 @@ public class MainActivity extends AppCompatActivity {
 
         call.enqueue(new Callback<List<Utilisateur>>() {
             RecyclerView rvUtilisateurs;
-            AdapterListe adapter;
+            AdapterUtilisateurs adapter;
             @Override
             public void onResponse(Call<List<Utilisateur>> call, Response<List<Utilisateur>> response) {
                 List<Utilisateur> liste2 = response.body();
-                adapter = new AdapterListe(liste2);
+                adapter = new AdapterUtilisateurs(liste2);
                 rvUtilisateurs.setAdapter(adapter);
             }
 
@@ -183,7 +184,7 @@ public class MainActivity extends AppCompatActivity {
             }
         });
     }
-*/
+
 
     public void getUtilisateurByid()
     {

@@ -4,41 +4,40 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="@drawable/ic_backgroung"
     tools:context=".Connexion">
 
     <EditText
-        android:id="@+id/tbemail"
-        android:layout_width="373dp"
-        android:layout_height="91dp"
-        android:layout_marginTop="52dp"
+        android:id="@+id/tbnom"
+        android:layout_width="249dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="24dp"
         android:ems="10"
-        android:hint="Email"
+        android:hint="Nom"
         android:inputType="text"
         android:textColor="#090808"
         android:textColorHint="#070707"
-        android:textSize="34sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.368"
+        app:layout_constraintHorizontal_bias="0.279"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView4" />
 
     <EditText
         android:id="@+id/tbpassword"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="36dp"
+        android:layout_width="249dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="24dp"
         android:backgroundTint="#5FAFA8"
         android:ems="10"
         android:hint="Mot de passe"
         android:inputType="textPassword"
         android:textColor="#0B0A0A"
         android:textColorHint="#0A0B0A"
-        android:textSize="34sp"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.368"
+        app:layout_constraintHorizontal_bias="0.302"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/tbemail" />
+        app:layout_constraintTop_toBottomOf="@+id/tbadresse" />
 
     <Button
         android:id="@+id/btconnexion"
@@ -49,18 +48,18 @@
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.448"
+        app:layout_constraintHorizontal_bias="0.352"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbpassword"
-        app:layout_constraintVertical_bias="0.171" />
+        app:layout_constraintVertical_bias="0.578" />
 
     <ImageView
         android:id="@+id/imageView4"
         android:layout_width="242dp"
         android:layout_height="49dp"
-        android:layout_marginTop="40dp"
+        android:layout_marginTop="8dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.36"
+        app:layout_constraintHorizontal_bias="0.384"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/imageView7"
         app:srcCompat="@drawable/ic_logo" />
@@ -69,10 +68,68 @@
         android:id="@+id/imageView7"
         android:layout_width="447dp"
         android:layout_height="94dp"
+        android:layout_marginTop="4dp"
         android:backgroundTint="#69D39F"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.138"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
         app:srcCompat="@drawable/wave" />
+
+    <EditText
+        android:id="@+id/tbemail"
+        android:layout_width="249dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Email"
+        android:inputType="textEmailAddress"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbprenom" />
+
+    <EditText
+        android:id="@+id/tbphone"
+        android:layout_width="249dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Telephone"
+        android:inputType="phone"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbemail" />
+
+    <EditText
+        android:id="@+id/tbadresse"
+        android:layout_width="249dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Adresse"
+        android:inputType="text"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.296"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbphone" />
+
+    <EditText
+        android:id="@+id/tbprenom"
+        android:layout_width="249dp"
+        android:layout_height="57dp"
+        android:layout_marginTop="24dp"
+        android:ems="10"
+        android:hint="Prenom"
+        android:inputType="text"
+        android:textSize="24sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.277"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/tbnom" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
