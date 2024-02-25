@@ -27,5 +27,5 @@ public interface InterfaceServeur {
     @FormUrlEncoded
     Call<Boolean> ajoutUtilisateur(@Field("nom") String nom,
                                    @Field("email") String email, @Field("adresse") String adresse, @Field("telephone") String telephone, @Field("prenom") String prenom,
-     @Field("password") String password);
+     @Field("pwd") String password);
 }
