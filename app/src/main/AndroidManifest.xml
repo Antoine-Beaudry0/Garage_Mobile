@@ -17,20 +17,20 @@
         <activity
             android:name=".Connexion"
             android:exported="true">
-           <!-- <intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
         </activity>
         <activity
             android:name=".Inscription"
             android:exported="true">
-            <!--<intent-filter>
+            <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
                 <category android:name="android.intent.category.LAUNCHER" />
-            </intent-filter>-->
+            </intent-filter>
         </activity>
         <activity
             android:name=".ListeUtilisateursActivity"
@@ -45,13 +45,7 @@
             android:exported="false" />
         <activity
             android:name=".GestionRendezvousGar"
-            android:exported="true" >
-        <intent-filter>
-            <action android:name="android.intent.action.MAIN" />
-
-            <category android:name="android.intent.category.LAUNCHER" />
-        </intent-filter>
-        </activity>
+            android:exported="false" />
         <activity
             android:name=".Notifications"
             android:exported="false"
