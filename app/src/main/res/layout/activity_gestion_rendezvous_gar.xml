@@ -1,187 +1,131 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#252A42"
-    android:backgroundTint="#EEEFF4"
-    android:padding="10dp"
-    tools:menu="@menu/menufragment"
-    >
+    android:background="#C0C2CC"
+    android:orientation="vertical"
     android:padding="10dp">
-
-<androidx.cardview.widget.CardView
-    android:id="@+id/cardView2"
-    android:layout_width="414dp"
-    android:layout_height="445dp"
-    android:background="#534B4B"
-    android:layout_width="398dp"
-    android:layout_height="284dp"
-    android:elevation="2dp"
-    app:cardElevation="4dp"
-    app:layout_constraintBottom_toBottomOf="parent"
-    app:layout_constraintEnd_toEndOf="parent"
-    app:layout_constraintStart_toStartOf="parent"
-    app:layout_constraintTop_toBottomOf="@+id/textView3">
-    app:layout_constraintTop_toTopOf="parent">
-
-    <LinearLayout
-        android:layout_width="396dp"
-        android:layout_height="wrap_content"
-        android:layout_width="match_parent"
-        android:layout_height="match_parent"
-        android:background="#002751"
-        android:backgroundTint="#31373C"
-        android:backgroundTint="#002751"
-        android:orientation="vertical"
-        android:padding="15dp">
-
-        @ -34,7 +28,7 @@
-        android:id="@+id/tvNom"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="Details"
-        android:text="TextView"
-        android:textColor="#EBEBEB"
-        android:textSize="24sp" />
-
-        @ -42,7 +36,7 @@
-        android:id="@+id/tvMarque"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="HDEB-HFIN"
-        android:text="TextView"
-        android:textColor="#EBEBEB"
-        android:textSize="24sp" />
-
-        @ -51,73 +45,17 @@
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:padding="5dp"
-        android:text="NOM"
-        android:text="TextView"
-        android:textAlignment="textStart"
-        android:textColor="#DDD8D8"
-        android:textColor="#FF7474"
-        android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/textView8"
-            android:layout_width="390dp"
-            android:layout_height="wrap_content"
-            android:text="PRENOM"
-            android:textColor="#EDE8E8"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/textView9"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="PB VEHICULES"
-            android:textColor="#D3C8C8"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/textView10"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="TEMPS SUR PANNE"
-            android:textColor="#E3DDDD"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/textView11"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="PRIX"
-            android:textColor="#E6E2E2"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/textView12"
-            android:layout_width="395dp"
-            android:layout_height="70dp"
-            android:text="Actions"
-            android:textColor="#BCB5B5"
-            android:textSize="48sp" />
-
-        <TextView
-            android:id="@+id/textView13"
-            android:layout_width="392dp"
-            android:layout_height="44dp"
-            android:text="Appeler la cliente"
-            android:textColor="#E8DFDF"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/textView14"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Rendez-vous bientot terminé"
-            android:textColor="#DDD6D6"
-            android:textSize="24sp" />
-
-        <TextView
-            android:id="@+id/textView15"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Rendez-vous Terminé"
-            android:textColor="#EDE7E7"
-            android:layout_height="62dp"
-            android:text="TextView"
-            android:textColor="#DA1414"
-            android:textSize="24sp" />
-
-    </LinearLayout>
-    @ -126,42 +64,19 @@
 
     <TextView
         android:id="@+id/textView3"
-        android:layout_width="196dp"
-        android:layout_height="52dp"
-        android:layout_marginTop="48dp"
+        android:layout_width="61dp"
+        android:layout_height="28dp"
+        android:layout_marginTop="16dp"
         android:text="EnCours..."
         android:textAlignment="center"
-        android:textSize="34sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
-    android:layout_width="119dp"
-    android:layout_height="32dp"
-    android:text="TextView"
-    android:textSize="24sp"
-    tools:layout_editor_absoluteX="43dp"
-    tools:layout_editor_absoluteY="71dp" />
+        android:textSize="16sp"
+        android:textStyle="bold|italic" />
 
     <TextView
         android:id="@+id/textView6"
-        android:layout_width="199dp"
-        android:layout_height="46dp"
-        android:layout_marginStart="8dp"
+        android:layout_width="134dp"
+        android:layout_height="25dp"
+        android:layout_marginTop="16dp"
         android:text="Emplacement"
         android:textAlignment="center"
-        android:textSize="24sp"
-        android:textStyle="bold|italic"
-        app:layout_constraintBottom_toBottomOf="@+id/textView3"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toEndOf="@+id/textView3"
-        app:layout_constraintTop_toTopOf="@+id/textView3" />
+        android:textSize="16sp"
+        android:textStyle="bold|italic" />
+
+    <androidx.cardview.widget.CardView
+        android:id="@+id/cardView2"
+        android:layout_width="wrap_content"
+        android:layout_height="165dp"
+        android:background="#534B4B"
+        app:cardElevation="4dp">
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:background="#002751"
+            android:orientation="vertical"
+            android:padding="15dp">
+
+
+            <TextView
+                android:id="@+id/textView8"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PRENOM"
+                android:textColor="#EDE8E8"
+                android:textSize="24sp" />
+
+            <TextView
+                android:id="@+id/textView9"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PB VEHICULES"
+                android:textColor="#D3C8C8"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView10"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="TEMPS SUR PANNE"
+                android:textColor="#E3DDDD"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView11"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="PRIX"
+                android:textColor="#E6E2E2"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView12"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Actions"
+                android:textColor="#BCB5B5"
+                android:textSize="34sp" />
+
+            <TextView
+                android:id="@+id/textView13"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Appeler la cliente"
+                android:textColor="#E8DFDF"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView14"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rendez-vous bientot terminé"
+                android:textColor="#DDD6D6"
+                android:textSize="20sp" />
+
+            <TextView
+                android:id="@+id/textView15"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:text="Rendez-vous terminé"
+                android:textColor="#DDD6D6"
+                android:textSize="24sp" />
+
+
+        </LinearLayout>
+
+    </androidx.cardview.widget.CardView>
 
     <FrameLayout
-        android:layout_width="445dp"
-        android:layout_height="70dp"
-        android:layout_marginTop="12dp"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView2">
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:text="TextView"
-        tools:layout_editor_absoluteX="268dp"
-        tools:layout_editor_absoluteY="87dp" />
+        android:id="@+id/idFrag"
+        android:layout_width="178dp"
+        android:layout_height="186dp">
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:menu="@menu/menufragment" />
     </FrameLayout>
-</androidx.constraintlayout.widget.ConstraintLayout>
+
+    <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
+        android:layout_width="wrap_content"
+        android:layout_height="147dp"
+        android:layout_weight=".1"
+        app:itemBackground="@color/white"
+        app:itemIconTint="@color/black"
+        app:itemTextColor="#0F1211"
+        app:menu="@menu/menu_fragment" />
+
+</LinearLayout>
