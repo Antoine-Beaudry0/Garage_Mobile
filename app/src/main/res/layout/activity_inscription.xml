@@ -4,8 +4,8 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#675858"
-    android:backgroundTint="#6A6161"
+    android:background="#404651"
+    android:backgroundTint="#404651"
     tools:context=".Inscription">
 
     <EditText
@@ -13,6 +13,7 @@
         android:layout_width="249dp"
         android:layout_height="57dp"
         android:layout_marginTop="24dp"
+        android:backgroundTint="#E8DADA"
         android:ems="10"
         android:hint="Nom"
         android:inputType="text"
@@ -43,18 +44,18 @@
 
     <Button
         android:id="@+id/btconnexion"
-        android:layout_width="324dp"
-        android:layout_height="61dp"
-        android:backgroundTint="#A18787"
+        android:layout_width="315dp"
+        android:layout_height="59dp"
+        android:backgroundTint="#E1D9D9"
         android:onClick="gestionClick"
         android:text="Inscription"
         android:textSize="24sp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.183"
+        app:layout_constraintHorizontal_bias="0.468"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbpassword"
-        app:layout_constraintVertical_bias="0.84" />
+        app:layout_constraintVertical_bias="0.875" />
 
     <ImageView
         android:id="@+id/imageView4"
@@ -69,11 +70,11 @@
 
     <ImageView
         android:id="@+id/imageView7"
-        android:layout_width="447dp"
-        android:layout_height="94dp"
+        android:layout_width="415dp"
+        android:layout_height="92dp"
         android:layout_marginTop="4dp"
-        android:background="#121514"
-        android:backgroundTint="#121514"
+        android:background="#6BF3C1"
+        android:backgroundTint="#55E1B2"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.138"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,14 +85,15 @@
         android:id="@+id/tbemail"
         android:layout_width="249dp"
         android:layout_height="57dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="28dp"
+        android:backgroundTint="#DCD6D6"
         android:ems="10"
         android:hint="Email"
         android:inputType="textEmailAddress"
         android:textColorHint="#0C0C0C"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintHorizontal_bias="0.277"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbprenom" />
 
@@ -99,14 +101,15 @@
         android:id="@+id/tbphone"
         android:layout_width="249dp"
         android:layout_height="57dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="20dp"
+        android:backgroundTint="#E8D4D4"
         android:ems="10"
         android:hint="Telephone"
         android:inputType="phone"
         android:textColorHint="#0E0D0D"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.302"
+        app:layout_constraintHorizontal_bias="0.277"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbemail" />
 
@@ -114,14 +117,15 @@
         android:id="@+id/tbadresse"
         android:layout_width="249dp"
         android:layout_height="57dp"
-        android:layout_marginTop="24dp"
+        android:layout_marginTop="16dp"
+        android:backgroundTint="#E1D8D8"
         android:ems="10"
         android:hint="Adresse"
         android:inputType="text"
         android:textColorHint="#131313"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.296"
+        app:layout_constraintHorizontal_bias="0.277"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/tbphone" />
 
@@ -130,6 +134,7 @@
         android:layout_width="249dp"
         android:layout_height="57dp"
         android:layout_marginTop="24dp"
+        android:backgroundTint="#E8DCDC"
         android:ems="10"
         android:hint="Prenom"
         android:inputType="text"

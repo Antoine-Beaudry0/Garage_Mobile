@@ -4,7 +4,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:background="#555C68"
+    android:background="#404651"
     tools:context=".Connexion">
 
     <ImageView
@@ -22,6 +22,7 @@
         android:id="@+id/idEmail"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
+        android:backgroundTint="#E1D3D3"
         android:ems="10"
         android:inputType="text"
         app:layout_constraintEnd_toEndOf="parent"
@@ -43,11 +44,13 @@
 
     <TextView
         android:id="@+id/idou"
-        android:layout_width="49dp"
-        android:layout_height="22dp"
+        android:layout_width="66dp"
+        android:layout_height="37dp"
         android:layout_marginTop="44dp"
         android:text="ou"
         android:textAlignment="center"
+        android:textColor="#EAE4E4"
+        android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.447"
         app:layout_constraintStart_toStartOf="parent"
@@ -84,6 +87,7 @@
         android:layout_height="31dp"
         android:layout_marginTop="20dp"
         android:text="mot de passe"
+        android:textColor="#171616"
         android:textSize="16sp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.241"
@@ -95,6 +99,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_marginStart="16dp"
+        android:backgroundTint="#E1D3D3"
         android:ems="10"
         android:inputType="textPassword"
         app:layout_constraintEnd_toEndOf="parent"
