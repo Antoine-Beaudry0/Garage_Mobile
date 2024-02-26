@@ -29,6 +29,6 @@ public class Fragment_Notif extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment__notif, container, false);
+        return inflater.inflate(R.layout.fragment__gestionrendezvous, container, false);
     }
 }

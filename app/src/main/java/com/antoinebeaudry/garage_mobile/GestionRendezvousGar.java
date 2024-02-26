@@ -44,12 +44,12 @@ public class GestionRendezvousGar extends AppCompatActivity {
             public boolean onNavigationItemSelected(@NonNull MenuItem item) {
                 if (item.getItemId() == R.id.home) {
                     fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.idFrag, fragment_home);
+                    fragmentTransaction.replace(R.id.flFragment, fragment_home);
                     fragmentTransaction.commit();
                     return true;
                 } else if (item.getItemId() == R.id.notif) {
                     fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.idFrag, fragment_notif);
+                    fragmentTransaction.replace(R.id.flFragment, fragment_notif);
                     fragmentTransaction.commit();
                     return true;
                 }
