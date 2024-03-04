@@ -4,29 +4,24 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    android:layout_weight="10"
     android:orientation="vertical"
     tools:ignore="MissingDefaultResource">
 
     <!-- Ajoutez vos vues à l'intérieur du LinearLayout avec les contraintes appropriées -->
 
     <!-- Fragment Container -->
-    <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/rv"
-        android:layout_width="match_parent"
-        android:layout_height="370dp"
-        android:layout_weight=".5" />
 
     <FrameLayout
         android:id="@+id/idFragment"
         android:layout_width="match_parent"
-        android:layout_height="435dp"
-        android:layout_weight="0.8" />
+        android:layout_height="match_parent"
+        android:layout_weight="1" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
+        android:id="@+id/bottomNav"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_weight="5"
+        android:layout_weight="15"
         app:itemBackground="@color/white"
         app:itemIconTint="@color/black"
         app:menu="@menu/menu_fragment" />
