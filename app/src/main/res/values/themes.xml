@@ -1,9 +1,18 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.Garage_Mobile" parent="Theme.Material3.DayNight">
+    <style name="Base.Theme.Garage_mobile2" parent="Theme.Material3.Light.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
+        <item name="colorPrimary">#BC0A0A</item>
+        <item name="colorPrimaryVariant">#ED0000</item>
+        <item name="titleTextColor">#FFEB3B</item>
+        <item name="android:statusBarColor">#BA2C2C</item>
+
+        <item name="colorSecondary">#FF9800</item>
+        <item name="colorSecondaryVariant">#4CAF50</item>
+
+        <item name="colorAccent">#9C27B0</item>
     </style>
 
-    <style name="Theme.Garage_Mobile" parent="Base.Theme.Garage_Mobile" />
+    <style name="Theme.Garage_mobile2" parent="Base.Theme.Garage_mobile2" />
 </resources>

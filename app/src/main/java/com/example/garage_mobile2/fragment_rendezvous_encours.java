@@ -1,0 +1,227 @@
+package com.example.garage_mobile2;
+
+import android.os.Bundle;
+
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
+import androidx.fragment.app.Fragment;
+import androidx.fragment.app.FragmentManager;
+import androidx.fragment.app.FragmentTransaction;
+import androidx.recyclerview.widget.LinearLayoutManager;
+import androidx.recyclerview.widget.RecyclerView;
+
+import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.MenuInflater;
+import android.view.MenuItem;
+import android.view.View;
+import android.view.ViewGroup;
+import android.widget.Toast;
+
+import com.google.android.material.bottomnavigation.BottomNavigationView;
+
+import java.util.List;
+
+import Classes.AdapterListeRendezVous;
+import Classes.AdapterListeServiceRendezvous;
+import Classes.InterfaceServeur;
+import Classes.Rendez_Vous;
+import Classes.ReponseServeur;
+import Classes.RetrofitInstance;
+import Classes.Servic_Rendezvous;
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
+
+
+public class fragment_rendezvous_encours extends Fragment {
+ RecyclerView recyclerViewRendezVous;
+ RecyclerView recyclerViewServices;
+
+ BottomNavigationView bottomNav;
+    fragmentConexion fragmentConexion;
+    //Fragment_Notif fragment_notif;
+    FragmentManager fragmentManager;
+    FragmentTransaction fragmentTransaction;
+
+
+    public fragment_rendezvous_encours() {
+        // Required empty public constructor
+
+    }
+
+    @Override
+    public void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        //setContentView(R.layout.activity_fragment_dynamique);
+
+
+
+    }
+
+    @Override
+    public View onCreateView(LayoutInflater inflater, ViewGroup container,
+                             Bundle savedInstanceState) {
+        // Inflate the layout for this fragment
+        return inflater.inflate(R.layout.layout_fragment_rendezvous_encours, container, false);
+
+    }
+
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+
+        //fragmentManager = getSupportFragmentManager();
+
+        fragmentConexion = new fragmentConexion();
+        //fragment_home = new Fragment_home();
+
+
+
+        /*fragmentTransaction = fragmentManager.beginTransaction();
+        fragmentTransaction.replace(R.id.idFragCon, fragmentConexion);
+        fragmentTransaction.commit();*/
+
+        recyclerViewRendezVous = view.findViewById(R.id.recyclerViewRendezVous);
+        recyclerViewRendezVous.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        //recyclerViewServices = view.findViewById(R.id.recyclerViewServices);
+        //recyclerViewServices.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        getRendezVous();
+
+        bottomNav = view.findViewById(R.id.bottomNav);
+        bottomNav .setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
+            @Override
+            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
+                if (item.getItemId() == R.id.home) {
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.idFragCon, fragmentConexion);
+                    fragmentTransaction.commit();
+                    return true;
+                } /*else if (item.getItemId() == R.id.notif) {
+                    fragmentTransaction = fragmentManager.beginTransaction();
+                    fragmentTransaction.replace(R.id.idFragment, fragment_notif);
+                    fragmentTransaction.commit();
+                    return true;
+                }*/
+                return false;
+            }
+        });
+
+
+    }
+
+    /*public void getRendezVous()
+    {
+        InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
+
+        Call<List<Rendez_Vous>> call = serveur.getListeRendezvous();
+
+        call.enqueue(new Callback<List<Rendez_Vous>>() {
+            @Override
+            public void onResponse(Call<List<Rendez_Vous>> call, Response<List<Rendez_Vous>> response) {
+                if (response.isSuccessful()) {
+                    List<Rendez_Vous> listeRendezVous = response.body();
+
+
+                    AdapterListeRendezVous adapterRendezVous = new AdapterListeRendezVous(listeRendezVous);
+                    recyclerViewRendezVous.setAdapter(adapterRendezVous);
+                } else {
+                    Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Rendez_Vous>> call, Throwable t) {
+                Log.d("TEST-CONNEXION", t.getMessage());
+                Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }
+*/
+    public void getRendezVous()
+    {
+        InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
+
+        Call<ReponseServeur> call = serveur.getListeRendezvous();
+        call.enqueue(new Callback<ReponseServeur>() {
+            @Override
+            public void onResponse(Call<ReponseServeur> call, Response<ReponseServeur> response) {
+                if (response.isSuccessful()) {
+
+                    List<Rendez_Vous> listeRendezVous = response.body().getData();
+
+
+                    AdapterListeRendezVous adapterRendezVous = new AdapterListeRendezVous(listeRendezVous, getContext());
+                    recyclerViewRendezVous.setAdapter(adapterRendezVous);
+                } else {
+                    Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<ReponseServeur> call, Throwable t) {
+                Log.d("TEST-CONNEXION", t.getMessage());
+                Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
+
+            }
+        });
+    }
+
+/*
+    public void getRendezVous_Encours()
+    {
+        InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
+
+        Call<List<Rendez_Vous>> call = serveur.getListeRendezvousEncours();
+
+        call.enqueue(new Callback<List<Rendez_Vous>>() {
+            @Override
+            public void onResponse(Call<List<Rendez_Vous>> call, Response<List<Rendez_Vous>> response) {
+                if (response.isSuccessful()) {
+                    List<Rendez_Vous> listeRendezVous = response.body();
+
+
+                    AdapterListeRendezVous adapterRendezVous = new AdapterListeRendezVous(listeRendezVous);
+                    recyclerViewRendezVous.setAdapter(adapterRendezVous);
+                } else {
+                    Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Rendez_Vous>> call, Throwable t) {
+                Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }*/
+
+   /* public void getRendezVousSerice()
+    {
+        InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
+
+        Call<List<Servic_Rendezvous>> call = serveur.getListeRendezvousServices();
+
+        call.enqueue(new Callback<List<Servic_Rendezvous>>() {
+            @Override
+            public void onResponse(Call<List<Servic_Rendezvous>> call, Response<List<Servic_Rendezvous>> response) {
+                if (response.isSuccessful()) {
+                    List<Servic_Rendezvous> listeRendezVousService = response.body();
+
+                    // Afficher la liste des rendez-vous dans le RecyclerView correspondant
+                    AdapterListeServiceRendezvous adapterListeServiceRendezvous = new AdapterListeServiceRendezvous(listeRendezVousService);
+                    recyclerViewRendezVous.setAdapter(adapterListeServiceRendezvous);
+                } else {
+                    Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
+                }
+            }
+
+            @Override
+            public void onFailure(Call<List<Servic_Rendezvous>> call, Throwable t) {
+                Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
+            }
+        });
+    }*/
+}
