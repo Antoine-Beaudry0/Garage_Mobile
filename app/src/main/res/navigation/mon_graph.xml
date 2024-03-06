@@ -13,6 +13,9 @@
         <action
             android:id="@+id/fragConToRenEncours"
             app:destination="@id/fragment_rendezvous_encours" />
+        <action
+            android:id="@+id/fragConToRendezConfirme"
+            app:destination="@id/fragment_rendezvousconfirmer" />
     </fragment>
     <fragment
         android:id="@+id/fragment_rendezvous_encours"

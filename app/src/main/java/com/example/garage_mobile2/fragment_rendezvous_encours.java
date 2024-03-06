@@ -113,34 +113,6 @@ public class fragment_rendezvous_encours extends Fragment {
 
     }
 
-    /*public void getRendezVous()
-    {
-        InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
-
-        Call<List<Rendez_Vous>> call = serveur.getListeRendezvous();
-
-        call.enqueue(new Callback<List<Rendez_Vous>>() {
-            @Override
-            public void onResponse(Call<List<Rendez_Vous>> call, Response<List<Rendez_Vous>> response) {
-                if (response.isSuccessful()) {
-                    List<Rendez_Vous> listeRendezVous = response.body();
-
-
-                    AdapterListeRendezVous adapterRendezVous = new AdapterListeRendezVous(listeRendezVous);
-                    recyclerViewRendezVous.setAdapter(adapterRendezVous);
-                } else {
-                    Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Rendez_Vous>> call, Throwable t) {
-                Log.d("TEST-CONNEXION", t.getMessage());
-                Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }
-*/
     public void getRendezVous()
     {
         InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
@@ -170,58 +142,4 @@ public class fragment_rendezvous_encours extends Fragment {
         });
     }
 
-/*
-    public void getRendezVous_Encours()
-    {
-        InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
-
-        Call<List<Rendez_Vous>> call = serveur.getListeRendezvousEncours();
-
-        call.enqueue(new Callback<List<Rendez_Vous>>() {
-            @Override
-            public void onResponse(Call<List<Rendez_Vous>> call, Response<List<Rendez_Vous>> response) {
-                if (response.isSuccessful()) {
-                    List<Rendez_Vous> listeRendezVous = response.body();
-
-
-                    AdapterListeRendezVous adapterRendezVous = new AdapterListeRendezVous(listeRendezVous);
-                    recyclerViewRendezVous.setAdapter(adapterRendezVous);
-                } else {
-                    Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Rendez_Vous>> call, Throwable t) {
-                Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }*/
-
-   /* public void getRendezVousSerice()
-    {
-        InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
-
-        Call<List<Servic_Rendezvous>> call = serveur.getListeRendezvousServices();
-
-        call.enqueue(new Callback<List<Servic_Rendezvous>>() {
-            @Override
-            public void onResponse(Call<List<Servic_Rendezvous>> call, Response<List<Servic_Rendezvous>> response) {
-                if (response.isSuccessful()) {
-                    List<Servic_Rendezvous> listeRendezVousService = response.body();
-
-                    // Afficher la liste des rendez-vous dans le RecyclerView correspondant
-                    AdapterListeServiceRendezvous adapterListeServiceRendezvous = new AdapterListeServiceRendezvous(listeRendezVousService);
-                    recyclerViewRendezVous.setAdapter(adapterListeServiceRendezvous);
-                } else {
-                    Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
-                }
-            }
-
-            @Override
-            public void onFailure(Call<List<Servic_Rendezvous>> call, Throwable t) {
-                Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
-            }
-        });
-    }*/
 }

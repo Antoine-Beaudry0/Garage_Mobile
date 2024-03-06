@@ -55,13 +55,6 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
             rendezVousViewHolder.recyclerViewServices.setLayoutManager(new LinearLayoutManager(context, LinearLayoutManager.HORIZONTAL,false));
             rendezVousViewHolder.recyclerViewServices.setAdapter(serviceAdapter);
         }
-        /*List<Servic_Rendezvous> serviceList =rendezVousList.get(position).getServices();
-        if (serviceList != null && !serviceList.isEmpty()) {
-            AdapterListeServiceRendezvous serviceAdapter = new AdapterListeServiceRendezvous(serviceList);
-            rendezVousViewHolder.recyclerViewServices.setLayoutManager(new LinearLayoutManager(itemView.getContext()));
-            rendezVousViewHolder.recyclerViewServices.setAdapter(serviceAdapter);
-        }*/
-
 
     }
 

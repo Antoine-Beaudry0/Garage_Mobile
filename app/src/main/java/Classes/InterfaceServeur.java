@@ -17,4 +17,9 @@ public interface InterfaceServeur {
 
     @GET("/api/rendezvous")
     Call<ReponseServeur> getListeRendezvous();
+
+    @GET("/api/rendezvous/encours")
+    Call<ReponseServeur> getListeRendezvousConfirme();
+
 }
+

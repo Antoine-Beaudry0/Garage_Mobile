@@ -2,7 +2,10 @@ package com.example.garage_mobile2;
 
 import android.os.Bundle;
 
+import androidx.annotation.NonNull;
+import androidx.annotation.Nullable;
 import androidx.fragment.app.Fragment;
+import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
@@ -46,11 +49,21 @@ public class fragment_rendezvousconfirmer extends Fragment {
         return inflater.inflate(R.layout.layout_fragment_rendezvousconfirmer, container, false);
     }
 
-    public void getRendezVous()
+    @Override
+    public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
+        super.onViewCreated(view, savedInstanceState);
+
+        recyclerViewRendezVousEncours = view.findViewById(R.id.rvConfirme);
+        recyclerViewRendezVousEncours.setLayoutManager(new LinearLayoutManager(getContext()));
+
+        getRendezVousEncours();
+    }
+
+    public void getRendezVousEncours()
     {
         InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
 
-        Call<ReponseServeur> call = serveur.getListeRendezvous();
+        Call<ReponseServeur> call = serveur.getListeRendezvousConfirme();
         call.enqueue(new Callback<ReponseServeur>() {
             @Override
             public void onResponse(Call<ReponseServeur> call, Response<ReponseServeur> response) {
@@ -60,7 +73,7 @@ public class fragment_rendezvousconfirmer extends Fragment {
 
 
                     AdapterListeRendezVous adapterRendezVous = new AdapterListeRendezVous(listeRendezVous, getContext());
-                    recyclerViewRendezVous.setAdapter(adapterRendezVous);
+                    recyclerViewRendezVousEncours.setAdapter(adapterRendezVous);
                 } else {
                     Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
                 }
