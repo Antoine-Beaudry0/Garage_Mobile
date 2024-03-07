@@ -12,7 +12,6 @@ import androidx.recyclerview.widget.RecyclerView;
 
 import android.util.Log;
 import android.view.LayoutInflater;
-import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
@@ -23,18 +22,16 @@ import com.google.android.material.bottomnavigation.BottomNavigationView;
 import java.util.List;
 
 import Classes.AdapterListeRendezVous;
-import Classes.AdapterListeServiceRendezvous;
 import Classes.InterfaceServeur;
 import Classes.Rendez_Vous;
 import Classes.ReponseServeur;
 import Classes.RetrofitInstance;
-import Classes.Servic_Rendezvous;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class fragment_rendezvous_encours extends Fragment {
+public class fragment_rendezvous extends Fragment {
  RecyclerView recyclerViewRendezVous;
  RecyclerView recyclerViewServices;
 
@@ -45,7 +42,7 @@ public class fragment_rendezvous_encours extends Fragment {
     FragmentTransaction fragmentTransaction;
 
 
-    public fragment_rendezvous_encours() {
+    public fragment_rendezvous() {
         // Required empty public constructor
 
     }
@@ -55,15 +52,13 @@ public class fragment_rendezvous_encours extends Fragment {
         super.onCreate(savedInstanceState);
         //setContentView(R.layout.activity_fragment_dynamique);
 
-
-
     }
 
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.layout_fragment_rendezvous_encours, container, false);
+        return inflater.inflate(R.layout.layout_fragment_rendezvous, container, false);
 
     }
 

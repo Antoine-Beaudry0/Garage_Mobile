@@ -27,7 +27,7 @@ import retrofit2.Response;
 
 
 public class fragment_rendezvousconfirmer extends Fragment {
-    RecyclerView recyclerViewRendezVousEncours;
+    RecyclerView recyclerViewRendezVousConfirme;
 
 
 
@@ -53,8 +53,8 @@ public class fragment_rendezvousconfirmer extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        recyclerViewRendezVousEncours = view.findViewById(R.id.rvConfirme);
-        recyclerViewRendezVousEncours.setLayoutManager(new LinearLayoutManager(getContext()));
+        recyclerViewRendezVousConfirme = view.findViewById(R.id.rvConfirme);
+        recyclerViewRendezVousConfirme.setLayoutManager(new LinearLayoutManager(getContext()));
 
         getRendezVousEncours();
     }
@@ -73,7 +73,7 @@ public class fragment_rendezvousconfirmer extends Fragment {
 
 
                     AdapterListeRendezVous adapterRendezVous = new AdapterListeRendezVous(listeRendezVous, getContext());
-                    recyclerViewRendezVousEncours.setAdapter(adapterRendezVous);
+                    recyclerViewRendezVousConfirme.setAdapter(adapterRendezVous);
                 } else {
                     Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
                 }
