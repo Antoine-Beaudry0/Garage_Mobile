@@ -56,10 +56,10 @@ public class fragment_rendezvousconfirmer extends Fragment {
         recyclerViewRendezVousConfirme = view.findViewById(R.id.rvConfirme);
         recyclerViewRendezVousConfirme.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        getRendezVousEncours();
+        getRendezVousConfirme();
     }
 
-    public void getRendezVousEncours()
+    public void getRendezVousConfirme()
     {
         InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
 

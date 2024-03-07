@@ -11,7 +11,7 @@
         android:label="layout_fragment_conexion"
         tools:layout="@layout/layout_fragment_conexion" >
         <action
-            android:id="@+id/fragConToRenEncours"
+            android:id="@+id/fragConToRendezvous"
             app:destination="@id/fragment_rendezvous" />
         <action
             android:id="@+id/fragConToRendezConfirme"

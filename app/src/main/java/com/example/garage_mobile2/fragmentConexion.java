@@ -45,7 +45,7 @@ public class fragmentConexion extends Fragment {
             @Override
             public void onClick(View view) {
                 NavController controller = Navigation.findNavController(view);
-                controller.navigate(R.id.fragConToRendezConfirme);
+                controller.navigate(R.id.fragConToRendezvous);
             }
         })
         ;
