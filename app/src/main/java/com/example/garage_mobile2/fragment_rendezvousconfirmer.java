@@ -21,6 +21,7 @@ import Classes.InterfaceServeur;
 import Classes.Rendez_Vous;
 import Classes.ReponseServeur;
 import Classes.RetrofitInstance;
+import okhttp3.ResponseBody;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -62,6 +63,22 @@ public class fragment_rendezvousconfirmer extends Fragment {
     public void getRendezVousConfirme()
     {
         InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
+
+        /*Call<ResponseBody> call = serveur.getListeRendezvousConfirme2();
+        call.enqueue(new Callback<ResponseBody>() {
+            @Override
+            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
+                Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
+
+            }
+
+            @Override
+            public void onFailure(Call<ResponseBody> call, Throwable t) {
+                Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
+
+            }
+        });*/
+
 
         Call<ReponseServeur> call = serveur.getListeRendezvousConfirme();
         call.enqueue(new Callback<ReponseServeur>() {

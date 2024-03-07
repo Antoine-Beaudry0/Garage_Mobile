@@ -37,6 +37,8 @@ public class fragment_rendezvous extends Fragment {
 
  BottomNavigationView bottomNav;
     fragmentConexion fragmentConexion;
+
+    fragment_rendezvous fragmentRendezvous;
     //Fragment_Notif fragment_notif;
     FragmentManager fragmentManager;
     FragmentTransaction fragmentTransaction;
@@ -67,22 +69,9 @@ public class fragment_rendezvous extends Fragment {
         super.onViewCreated(view, savedInstanceState);
 
 
-        //fragmentManager = getSupportFragmentManager();
-
-        fragmentConexion = new fragmentConexion();
-        //fragment_home = new Fragment_home();
-
-
-
-        /*fragmentTransaction = fragmentManager.beginTransaction();
-        fragmentTransaction.replace(R.id.idFragCon, fragmentConexion);
-        fragmentTransaction.commit();*/
-
         recyclerViewRendezVous = view.findViewById(R.id.recyclerViewRendezVous);
         recyclerViewRendezVous.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        //recyclerViewServices = view.findViewById(R.id.recyclerViewServices);
-        //recyclerViewServices.setLayoutManager(new LinearLayoutManager(getContext()));
 
         getRendezVous();
 
@@ -95,12 +84,12 @@ public class fragment_rendezvous extends Fragment {
                     fragmentTransaction.replace(R.id.idFragCon, fragmentConexion);
                     fragmentTransaction.commit();
                     return true;
-                } /*else if (item.getItemId() == R.id.notif) {
+                } else if (item.getItemId() == R.id.notif) {
                     fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.idFragment, fragment_notif);
+                    fragmentTransaction.replace(R.id.idFragrendezvous,fragmentRendezvous);
                     fragmentTransaction.commit();
                     return true;
-                }*/
+                }
                 return false;
             }
         });

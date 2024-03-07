@@ -24,7 +24,14 @@
         android:id="@+id/fragment_rendezvous"
         android:name="com.example.garage_mobile2.fragment_rendezvous"
         android:label="layout_fragment_rendezvous_encours"
-        tools:layout="@layout/layout_fragment_rendezvous" />
+        tools:layout="@layout/layout_fragment_rendezvous" >
+        <action
+            android:id="@+id/fragRendTOfragConfirme"
+            app:destination="@id/fragment_rendezvousconfirmer" />
+        <action
+            android:id="@+id/fragRenTofragEncours"
+            app:destination="@id/fragment_RendezvousEncoursV" />
+    </fragment>
     <fragment
         android:id="@+id/fragment_rendezvousconfirmer"
         android:name="com.example.garage_mobile2.fragment_rendezvousconfirmer"
