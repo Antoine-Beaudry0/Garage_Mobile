@@ -68,32 +68,10 @@ public class fragment_rendezvous extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
         recyclerViewRendezVous = view.findViewById(R.id.recyclerViewRendezVous);
         recyclerViewRendezVous.setLayoutManager(new LinearLayoutManager(getContext()));
 
-
         getRendezVous();
-
-        bottomNav = view.findViewById(R.id.bottomNav);
-        bottomNav .setOnNavigationItemSelectedListener(new BottomNavigationView.OnNavigationItemSelectedListener() {
-            @Override
-            public boolean onNavigationItemSelected(@NonNull MenuItem item) {
-                if (item.getItemId() == R.id.home) {
-                    fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.idFragCon, fragmentConexion);
-                    fragmentTransaction.commit();
-                    return true;
-                } else if (item.getItemId() == R.id.notif) {
-                    fragmentTransaction = fragmentManager.beginTransaction();
-                    fragmentTransaction.replace(R.id.idFragrendezvous,fragmentRendezvous);
-                    fragmentTransaction.commit();
-                    return true;
-                }
-                return false;
-            }
-        });
-
 
     }
 

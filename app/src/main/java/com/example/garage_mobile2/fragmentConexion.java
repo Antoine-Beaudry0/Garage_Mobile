@@ -1,5 +1,7 @@
 package com.example.garage_mobile2;
 
+import android.content.Context;
+import android.content.SharedPreferences;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -69,18 +71,18 @@ public class fragmentConexion extends Fragment {
             @Override
             public void onClick(View view) {
                 NavController controller = Navigation.findNavController(view);
-                controller.navigate(R.id.fragConToRendezConfirme);
+                controller.navigate(R.id.fragConToFragMenu);
 
-/*
-                InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
+          /*     InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
 
-                Call<LoginResponse> call = serveur.login(etemail.getText().toString(), etpassword.getText().toString());
-                call.enqueue(new Callback<LoginResponse>() {
+                Call<ReponseServeur> call = serveur.login( "alexandre.bernard@example.com", "pwd");
+                call.enqueue(new Callback<ReponseServeur>() {
                     @Override
-                    public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                        LoginResponse loginResponse = response.body();
-                        if (!loginResponse.isError()) {
-
+                    public void onResponse(Call<ReponseServeur> call, Response<ReponseServeur> response) {
+                        ReponseServeur loginResponse = response.body();
+                        if (response.isSuccessful()) {
+                            //SharedPreferences sharedPref = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+                            Toast.makeText(getContext(), "réussi", Toast.LENGTH_SHORT).show();
 
                         } else {
                             Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
@@ -88,7 +90,7 @@ public class fragmentConexion extends Fragment {
                     }
 
                     @Override
-                    public void onFailure(Call<LoginResponse> call, Throwable t) {
+                    public void onFailure(Call<ReponseServeur> call, Throwable t) {
                         Log.d("TEST-CONNEXION", t.getMessage());
                         Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
 

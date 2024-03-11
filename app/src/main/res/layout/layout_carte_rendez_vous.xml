@@ -15,16 +15,6 @@
         android:padding="16dp">
 
         <TextView
-            android:id="@+id/txEncours"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:text="Encours"
-            android:textAlignment="center"
-            android:textColor="#000000"
-            android:textSize="34sp"
-            android:textStyle="bold|italic" />
-
-        <TextView
             android:id="@+id/textViewDateHeureDebut"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"

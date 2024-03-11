@@ -1,25 +1,25 @@
 <?xml version="1.0" encoding="utf-8"?>
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
-        android:id="@+id/home"
+        android:id="@+id/fragment_rendezvous2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/ic_home"
         android:title="home" />
     <item
-        android:id="@+id/notif"
+        android:id="@+id/fragment_RendezvousEncoursV"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/ic_notification"
-        android:title="notif" />
+        android:title="RDVConfirmé" />
     <item
-        android:id="@+id/cal"
+        android:id="@+id/fragment_rendezvousconfirmer2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/ic_calender"
         android:title="Cal" />
     <item
-        android:id="@+id/para"
+        android:id="@+id/fragment_Profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/ic_setting"

@@ -64,22 +64,6 @@ public class fragment_rendezvousconfirmer extends Fragment {
     {
         InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
 
-        /*Call<ResponseBody> call = serveur.getListeRendezvousConfirme2();
-        call.enqueue(new Callback<ResponseBody>() {
-            @Override
-            public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
-                Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
-
-            }
-
-            @Override
-            public void onFailure(Call<ResponseBody> call, Throwable t) {
-                Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
-
-            }
-        });*/
-
-
         Call<ReponseServeur> call = serveur.getListeRendezvousConfirme();
         call.enqueue(new Callback<ReponseServeur>() {
             @Override

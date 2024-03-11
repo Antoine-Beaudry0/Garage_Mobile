@@ -1,0 +1,28 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/menu_graph"
+    app:startDestination="@id/fragment_rendezvous2">
+
+    <fragment
+        android:id="@+id/fragment_rendezvous2"
+        android:name="com.example.garage_mobile2.fragment_rendezvous"
+        android:label="layout_fragment_rendezvous"
+        tools:layout="@layout/layout_fragment_rendezvous" />
+    <fragment
+        android:id="@+id/fragment_rendezvousconfirmer2"
+        android:name="com.example.garage_mobile2.fragment_rendezvousconfirmer"
+        android:label="layout_fragment_rendezvousconfirmer"
+        tools:layout="@layout/layout_fragment_rendezvousconfirmer" />
+    <fragment
+        android:id="@+id/fragment_RendezvousEncoursV"
+        android:name="com.example.garage_mobile2.fragment_rendezvousconfirmer"
+        android:label="layout_fragment_rendezvousconfirmer"
+        tools:layout="@layout/layout_fragment_rendezvousconfirmer" />
+    <fragment
+        android:id="@+id/fragment_Profile"
+        android:name="com.example.garage_mobile2.Fragment_Profile"
+        android:label="layout_fragment__profile"
+        tools:layout="@layout/layout_fragment__profile" />
+</navigation>

@@ -20,13 +20,6 @@
             android:layout_height="match_parent"
             android:layout_weight="1" />
 
-        <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNav"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:layout_weight="9"
-            app:menu="@menu/menu" />
-
     </LinearLayout>
 
 </FrameLayout>
