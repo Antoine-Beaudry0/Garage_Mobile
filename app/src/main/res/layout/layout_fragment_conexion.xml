@@ -5,6 +5,7 @@
     android:id="@+id/idFragCon"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:background="#222831"
     tools:context=".fragmentConexion">
 
     <LinearLayout
@@ -19,16 +20,18 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Adresse Email"
-            android:textColor="#131212"
+            android:textAlignment="center"
+            android:textColor="#E0E0E0"
             android:textSize="34sp" />
 
         <EditText
             android:id="@+id/idEmail"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#FFFFFF"
             android:ems="10"
-            android:inputType="text"
-            android:textColor="#0E0D0D"
+            android:inputType="textEmailAddress"
+            android:textColor="#FFFFFF"
             android:textSize="34sp" />
 
 
@@ -36,23 +39,29 @@
             android:id="@+id/tvmdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="mot de passe"
+            android:text="Mot de passe"
+            android:textAlignment="center"
+            android:textColor="#E0E0E0"
             android:textSize="34sp" />
 
         <EditText
             android:id="@+id/idpassword"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:backgroundTint="#FFFFFF"
             android:ems="10"
             android:inputType="textPassword"
+            android:textColor="#FFFFFF"
             android:textSize="34sp" />
 
         <Button
             android:id="@+id/btConnexion"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
+            android:backgroundTint="?attr/colorPrimary"
             android:text="Connexion"
+            android:textColor="?attr/colorPrimaryVariant"
             android:textSize="34sp" />
 
         <TextView
@@ -61,15 +70,18 @@
             android:layout_height="wrap_content"
             android:text="ou"
             android:textAlignment="center"
+            android:textColor="#E0E0E0"
+            android:textColorLink="#3F51B5"
             android:textSize="34sp" />
 
         <Button
             android:id="@+id/btInscription"
-            android:layout_width="match_parent"
+            android:layout_width="300dp"
             android:layout_height="wrap_content"
+            android:backgroundTint="?attr/colorPrimaryVariant"
             android:text="Inscription"
+            android:textColor="?attr/colorSecondaryVariant"
             android:textSize="34sp" />
-
 
     </LinearLayout>
 </FrameLayout>
