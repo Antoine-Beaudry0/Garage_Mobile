@@ -58,16 +58,16 @@ public class fragment_RendezvousEncoursV extends Fragment {
         recyclerViewRendezVousEncours = view.findViewById(R.id.rvRendezvousEncours);
         recyclerViewRendezVousEncours.setLayoutManager(new LinearLayoutManager(getContext()));
 
-        getRendezVousConfirme();
+        getRendezVousEncours();
 
 
     }
 
-    public void getRendezVousConfirme()
+    public void getRendezVousEncours()
     {
         InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
 
-        Call<ReponseServeur> call = serveur.getListeRendezvousConfirme();
+        Call<ReponseServeur> call = serveur.getListeRendezvousEncours();
         call.enqueue(new Callback<ReponseServeur>() {
             @Override
             public void onResponse(Call<ReponseServeur> call, Response<ReponseServeur> response) {

@@ -17,11 +17,11 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/ic_calender"
-        android:title="Cal" />
+        android:title="RDVEncours" />
     <item
         android:id="@+id/fragment_Profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/ic_setting"
-        android:title="para" />
+        android:title="Profile" />
 </menu>

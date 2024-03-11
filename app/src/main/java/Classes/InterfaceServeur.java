@@ -14,7 +14,7 @@ public interface InterfaceServeur {
     /*@GET("/api/rendezvous")
     Call<List<Rendez_Vous>> getListeRendezvous();*/
     @FormUrlEncoded
-    @POST("/api/users/login")
+    @POST("/api/login")
     Call<ReponseServeur> login(@Field("email") String username,
                                @Field("password") String mdp
                                );

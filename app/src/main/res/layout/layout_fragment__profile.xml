@@ -3,12 +3,94 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
+    android:layout_marginTop="25dp"
     tools:context=".Fragment_Profile">
 
     <!-- TODO: Update blank fragment layout -->
-    <TextView
+
+    <LinearLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:text="@string/hello_blank_fragment" />
+        android:layout_margin="15dp"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/profile"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:text="Mon Profile"
+            android:textAlignment="center"
+            android:textSize="34sp" />
+
+        <TextView
+            android:id="@+id/idNom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:drawableLeft="@drawable/ic_person50"
+            android:text="Nom"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/idPrenom"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:drawableLeft="@drawable/ic_person50"
+            android:text="Prenom"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/idPhone"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:drawableLeft="@drawable/ic_phone2"
+            android:text="Phone"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/idAddresse"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:drawableLeft="@drawable/ic_location"
+            android:text="Adresse"
+            android:textSize="24sp" />
+
+        <TextView
+            android:id="@+id/idEmail2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="30dp"
+            android:drawableLeft="@drawable/ic_email2"
+            android:text="Email"
+            android:textSize="24sp" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="match_parent"
+            android:gravity="center"
+            android:orientation="horizontal">
+
+            <Button
+                android:id="@+id/btnModifier"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Modifier Profile"
+                android:textColorLink="#CA2121"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btndelete"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_weight="1"
+                android:text="Supprimer Compte"
+                android:textSize="16sp" />
+        </LinearLayout>
+
+    </LinearLayout>
 
 </FrameLayout>

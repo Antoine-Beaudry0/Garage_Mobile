@@ -64,24 +64,28 @@ public class fragmentConexion extends Fragment {
         TextView etemail = view.findViewById(R.id.idEmail);
         TextView etpassword = view.findViewById(R.id.idpassword);
 
+        String Email = etemail.getText().toString();
+        String Password = etpassword.getText().toString();
+
 
 
 
         btConnexion.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                NavController controller = Navigation.findNavController(view);
-                controller.navigate(R.id.fragConToFragMenu);
 
-          /*     InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
 
-                Call<ReponseServeur> call = serveur.login( "alexandre.bernard@example.com", "pwd");
+              InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
+
+                Call<ReponseServeur> call = serveur.login( "alexandre.bernard@example.com", "password");
                 call.enqueue(new Callback<ReponseServeur>() {
                     @Override
                     public void onResponse(Call<ReponseServeur> call, Response<ReponseServeur> response) {
                         ReponseServeur loginResponse = response.body();
                         if (response.isSuccessful()) {
                             //SharedPreferences sharedPref = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+                            NavController controller = Navigation.findNavController(view);
+                            controller.navigate(R.id.fragConToFragMenu);
                             Toast.makeText(getContext(), "réussi", Toast.LENGTH_SHORT).show();
 
                         } else {
@@ -95,7 +99,7 @@ public class fragmentConexion extends Fragment {
                         Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
 
                     }
-                });*/
+                });
             }
         })
         ;
