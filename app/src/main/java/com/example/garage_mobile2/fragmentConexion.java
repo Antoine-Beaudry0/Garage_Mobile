@@ -26,6 +26,7 @@ import Classes.LoginResponse;
 import Classes.Rendez_Vous;
 import Classes.ReponseServeur;
 import Classes.RetrofitInstance;
+import Classes.Users;
 import retrofit2.Call;
 import retrofit2.Callback;
 import retrofit2.Response;
@@ -64,10 +65,6 @@ public class fragmentConexion extends Fragment {
         TextView etemail = view.findViewById(R.id.idEmail);
         TextView etpassword = view.findViewById(R.id.idpassword);
 
-        String Email = etemail.getText().toString();
-        String Password = etpassword.getText().toString();
-
-
 
 
         btConnexion.setOnClickListener(new View.OnClickListener() {
@@ -75,28 +72,44 @@ public class fragmentConexion extends Fragment {
             public void onClick(View view) {
 
 
+                String Email = etemail.getText().toString();
+                String Password = etpassword.getText().toString();
+
+
               InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
 
-                Call<ReponseServeur> call = serveur.login( "alexandre.bernard@example.com", "password");
-                call.enqueue(new Callback<ReponseServeur>() {
+                Call<LoginResponse> call = serveur.login(Email , Password);
+                call.enqueue(new Callback<LoginResponse>() {
                     @Override
-                    public void onResponse(Call<ReponseServeur> call, Response<ReponseServeur> response) {
-                        ReponseServeur loginResponse = response.body();
+                    public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                        LoginResponse loginResponse = response.body();
+
                         if (response.isSuccessful()) {
-                            //SharedPreferences sharedPref = getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+
+                            SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+                            SharedPreferences.Editor editor = sharedPreferences.edit();
+                            //editor.putString("token", response.body().getToken());
+                           Users user = response.body().getUser();
+                          editor.putInt("id", user.getId());
+                            editor.putString("prenom", user.getPrenom());
+                            editor.putString("nom", user.getNom());
+                            editor.putString("phone", user.getTelephone());
+                            editor.putString("email", user.getEmail());
+                            Toast.makeText(getContext(), "réussi", Toast.LENGTH_SHORT).show();
                             NavController controller = Navigation.findNavController(view);
                             controller.navigate(R.id.fragConToFragMenu);
-                            Toast.makeText(getContext(), "réussi", Toast.LENGTH_SHORT).show();
 
                         } else {
-                            Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), Email, Toast.LENGTH_SHORT).show();
+
                         }
                     }
 
                     @Override
-                    public void onFailure(Call<ReponseServeur> call, Throwable t) {
+                    public void onFailure(Call<LoginResponse> call, Throwable t) {
                         Log.d("TEST-CONNEXION", t.getMessage());
                         Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
+
 
                     }
                 });

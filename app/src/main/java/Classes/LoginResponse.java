@@ -1,14 +1,14 @@
 package Classes;
 
+import com.google.gson.annotations.SerializedName;
+
 public class LoginResponse {
 
     private String message ;
     private boolean error ;
+    @SerializedName("user")
+
     private Users user;
-
-
-
-
 
     public LoginResponse(String message, boolean error, Users user) {
         this.message = message;

@@ -57,21 +57,6 @@ public class Fragment_Profile extends Fragment {
         tvAdresse = view.findViewById(R.id.idAddresse);
 
 
-      //Intent intent = getIntent();
-     /*   String nom = intent.getStringExtra("nom");
-        String prenom = intent.getStringExtra("prenom");
-        String email = intent.getStringExtra("email");
-        String phone = intent.getStringExtra("phone");
-        String adress = intent.getStringExtra("adress");
-*/
-
-       /* tvNom.setText(nom);
-        tvPrenom.setText(prenom);
-        tvEmail.setText(email);
-        tvPhone.setText(phone);
-        tvAdresse.setText(adress);
-*/
-
 
     }
 

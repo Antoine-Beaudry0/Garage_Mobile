@@ -15,7 +15,7 @@ import android.widget.Toast;
 import Classes.AdapterListeUser;
 import Classes.Users;
 
-public class MainActivity extends AppCompatActivity  implements AdapterListeUser.interfaceUser {
+public class MainActivity extends AppCompatActivity {
 
     Context context;
 
@@ -24,20 +24,7 @@ public class MainActivity extends AppCompatActivity  implements AdapterListeUser
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
 
-
-
     }
 
-    @Override
-    public void gestionClick(int position, Users user) {
-        Intent intent = new Intent(this, Fragment_Profile.class);
-        intent.putExtra("nom", user.getNom());
-        intent.putExtra("prenom", user.getPrenom());
-        intent.putExtra("email", user.getEmail());
-        intent.putExtra("phone", user.getTelephone());
-        intent.putExtra("adresse", user.getAdresse());
 
-        startActivity(intent);
-
-    }
 }
