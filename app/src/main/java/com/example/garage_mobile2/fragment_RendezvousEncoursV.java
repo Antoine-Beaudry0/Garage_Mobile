@@ -68,7 +68,7 @@ public class fragment_RendezvousEncoursV extends Fragment {
 
         btnRendezVousTermine = view.findViewById(R.id.btnRendezVousTermine);
 
-        btnRendezVousTermine.setOnClickListener(new View.OnClickListener() {
+        /*btnRendezVousTermine.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
                 InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
@@ -102,7 +102,7 @@ public class fragment_RendezvousEncoursV extends Fragment {
 
         });
 
-
+*/
     }
 
     public void getRendezVousEncours()

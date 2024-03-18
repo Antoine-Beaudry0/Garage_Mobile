@@ -81,7 +81,6 @@ public class AdapterListeUser extends RecyclerView.Adapter {
             tvnom = itemView.findViewById(R.id.idNom);
             tvPrenom = itemView.findViewById(R.id.idPrenom);
             tvCourriel = itemView.findViewById(R.id.idEmail2);
-            tvPhone = itemView.findViewById(R.id.idPhone);
             btnmodif = itemView.findViewById(R.id.btnModifier);
             btndelete = itemView.findViewById(R.id.btndelete);
 

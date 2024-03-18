@@ -7,15 +7,18 @@ import android.os.Bundle;
 
 import androidx.annotation.NonNull;
 import androidx.annotation.Nullable;
+import androidx.appcompat.widget.Toolbar;
 import androidx.fragment.app.Fragment;
 
 import android.util.Log;
 import android.view.LayoutInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.TextView;
 
 import android.content.Intent;
+import android.widget.Toast;
 
 import Classes.AdapterListeUser;
 import Classes.Users;
@@ -25,10 +28,10 @@ public class Fragment_Profile extends Fragment {
 
     TextView tvNom;
     TextView tvPrenom;
-    TextView tvPhone;
     TextView  tvEmail;
+    TextView tvAFF;
 
-    TextView tvAdresse;
+
 
 
 
@@ -53,25 +56,38 @@ public class Fragment_Profile extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Obtenir une référence aux préférences partagées
 
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
 
-        // Lire les valeurs à partir des préférences partagées
-        String valeur1 = sharedPreferences.getString("prenom",null);
-        String valeur2 = sharedPreferences.getString("nom",null);
+        String prenom = sharedPreferences.getString("prenom", null);
+        String nom = sharedPreferences.getString("nom", null);
+        String email = sharedPreferences.getString("email", null);
 
+        tvAFF = view.findViewById(R.id.profil);
 
-        // Utiliser les valeurs lues comme nécessaire
-        Log.d("Valeur 1:", valeur1);
-        Log.d("Valeur 2:", (valeur2));
+        Toolbar toolbar = view.findViewById(R.id.toolbar);
 
+        toolbar.inflateMenu(R.menu.mon_menu);
+
+        toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
+            @Override
+            public boolean onMenuItemClick(MenuItem item) {
+                if(item.getItemId() == R.id.itemdec)
+                    Toast.makeText(getContext(), "Item 1", Toast.LENGTH_SHORT).show();
+                return false;
+            }
+        });
 
         tvNom = view.findViewById(R.id.idNom);
         tvPrenom = view.findViewById(R.id.idPrenom);
-        tvPhone = view.findViewById(R.id.idPhone);
         tvEmail = view.findViewById(R.id.idEmail2);
-        tvAdresse = view.findViewById(R.id.idAddresse);
+
+        tvNom.setText(nom);
+        tvPrenom.setText(prenom);
+        tvEmail.setText(email);
+        tvAFF.setText("Bienvenue" + " " + prenom);
+
+
 
 
 

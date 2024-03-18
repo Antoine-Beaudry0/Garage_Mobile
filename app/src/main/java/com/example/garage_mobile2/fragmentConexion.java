@@ -102,13 +102,15 @@ public class fragmentConexion extends Fragment {
                             SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
                             editor.putString("token", response.body().getToken());
-                           Users user = response.body().getUser();
-                          editor.putInt("id", user.getId());
+                            Users user = response.body().getUser();
+                            editor.putInt("id", user.getId());
                             editor.putString("prenom", user.getPrenom());
                             editor.putString("nom", user.getNom());
-                            editor.putString("phone", user.getTelephone());
+                            Toast.makeText(getContext(), user.getPrenom(), Toast.LENGTH_SHORT).show();
                             editor.putString("email", user.getEmail());
+                            editor.apply();
                             Toast.makeText(getContext(), "Bienvenue", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), user.getNom(), Toast.LENGTH_SHORT).show();
                             NavController controller = Navigation.findNavController(view);
                             controller.navigate(R.id.fragConToFragMenu);
 

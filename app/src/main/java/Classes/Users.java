@@ -4,93 +4,23 @@ import com.google.gson.annotations.SerializedName;
 
 public class Users {
 
-
-    @Override
-    public String toString() {
-        return "Users{" +
-                "id=" + id +
-                ", email='" + email + '\'' +
-                ", password='" + password + '\'' +
-                ", prenom='" + prenom + '\'' +
-                ", telephone='" + telephone + '\'' +
-                ", adresse='" + adresse + '\'' +
-                ", nom='" + nom + '\'' +
-                '}';
-    }
-
     @SerializedName("id")
-
-    int id;
+    private int id;
 
     @SerializedName("email")
-    String email;
-    @SerializedName("password")
-    String password;
+    private String email;
+
     @SerializedName("prenom")
-    String prenom;
-    @SerializedName("telephone")
-    String telephone;
-    @SerializedName("adresse")
-    String adresse;
+    private String prenom;
+
     @SerializedName("nom")
-    String nom;
+    private String nom;
 
-    public Users(int id ,String email, String password, String prenom, String telephone, String adresse, String nom) {
-        this.email = email;
-        this.password = password;
-        this.prenom = prenom;
-        this.telephone = telephone;
-        this.adresse = adresse;
-        this.nom = nom;
+
+    public Users(int id, String email, String prenom, String nom) {
         this.id = id;
-    }
-
-
-    public String getEmail() {
-        return email;
-    }
-
-    public void setEmail(String email) {
         this.email = email;
-    }
-
-    public String getPassword() {
-        return password;
-    }
-
-    public void setPassword(String password) {
-        this.password = password;
-    }
-
-    public String getPrenom() {
-        return prenom;
-    }
-
-    public void setPrenom(String prenom) {
         this.prenom = prenom;
-    }
-
-    public String getTelephone() {
-        return telephone;
-    }
-
-    public void setTelephone(String telephone) {
-        this.telephone = telephone;
-    }
-
-    public String getAdresse() {
-        return adresse;
-    }
-
-    public void setAdresse(String adresse) {
-        this.adresse = adresse;
-    }
-
-    public String getNom() {
-        return nom;
-    }
-
-    public void setNom(String nom) {
         this.nom = nom;
     }
 
@@ -102,8 +32,39 @@ public class Users {
         this.id = id;
     }
 
+    public String getEmail() {
+        return email;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    public String getPrenom() {
+        return prenom;
+    }
+
+    public void setPrenom(String prenom) {
+        this.prenom = prenom;
+    }
+
+    public String getNom() {
+        return nom;
+    }
+
+    public void setNom(String nom) {
+        this.nom = nom;
+    }
+
+    @Override
+    public String toString() {
+        return "Users{" +
+                "id=" + id +
+                ", email='" + email + '\'' +
+                ", prenom='" + prenom + '\'' +
+                ", nom='" + nom + '\'' +
+                '}';
 
 
-
-
+    }
 }

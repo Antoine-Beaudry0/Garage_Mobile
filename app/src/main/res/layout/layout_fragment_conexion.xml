@@ -30,6 +30,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#FFFFFF"
             android:ems="10"
+            android:text="louis.martin@example.com"
             android:inputType="textEmailAddress"
             android:textColor="#FFFFFF"
             android:textSize="34sp" />
@@ -50,6 +51,7 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#FFFFFF"
             android:ems="10"
+            android:text="password"
             android:inputType="textPassword"
             android:textColor="#FFFFFF"
             android:textSize="34sp" />
