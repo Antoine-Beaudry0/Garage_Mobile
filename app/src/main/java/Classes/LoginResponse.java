@@ -10,6 +10,8 @@ public class LoginResponse {
 
     private Users user;
 
+    private String token;
+
     public LoginResponse(String message, boolean error, Users user) {
         this.message = message;
         this.error = error;
@@ -26,6 +28,16 @@ public class LoginResponse {
 
     public Users getUser() {
         return user;
+    }
+
+    // Getter pour token
+    public String getToken() {
+        return token;
+    }
+
+    // Setter pour token
+    public void setToken(String token) {
+        this.token = token;
     }
 
 

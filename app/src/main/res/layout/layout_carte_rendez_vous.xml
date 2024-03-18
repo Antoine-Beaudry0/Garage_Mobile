@@ -58,9 +58,36 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvServices"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_width="374dp"
+            android:layout_height="299dp"
             android:padding="10dp" />
+
+        <LinearLayout
+            android:layout_width="383dp"
+            android:layout_height="175dp"
+            android:orientation="vertical">
+
+            <Button
+                android:id="@+id/btnappellerClient"
+                android:layout_width="361dp"
+                android:layout_height="wrap_content"
+                android:text="Appeler le client"
+                android:textSize="24sp" />
+
+            <Button
+                android:id="@+id/btnRDVbientotTermine"
+                android:layout_width="361dp"
+                android:layout_height="wrap_content"
+                android:text="Rendez-vous bientôt terminé"
+                android:textSize="20sp" />
+
+            <Button
+                android:id="@+id/btnRendezVousTermine"
+                android:layout_width="361dp"
+                android:layout_height="wrap_content"
+                android:text="Rendez-vous terminé"
+                android:textSize="24sp" />
+        </LinearLayout>
 
     </LinearLayout>
 

@@ -75,6 +75,19 @@ public class fragmentConexion extends Fragment {
                 String Email = etemail.getText().toString();
                 String Password = etpassword.getText().toString();
 
+                // Valider que les champs email et mot de passe ne sont pas vides
+                if (Email.isEmpty()) {
+                    etemail.setError("Veuillez entrer votre adresse email");
+                    etemail.requestFocus();
+                    return;
+                }
+
+                if (Password.isEmpty()) {
+                    etpassword.setError("Veuillez entrer votre mot de passe");
+                    etpassword.requestFocus();
+                    return;
+                }
+
 
               InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
 
@@ -88,19 +101,19 @@ public class fragmentConexion extends Fragment {
 
                             SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
                             SharedPreferences.Editor editor = sharedPreferences.edit();
-                            //editor.putString("token", response.body().getToken());
+                            editor.putString("token", response.body().getToken());
                            Users user = response.body().getUser();
                           editor.putInt("id", user.getId());
                             editor.putString("prenom", user.getPrenom());
                             editor.putString("nom", user.getNom());
                             editor.putString("phone", user.getTelephone());
                             editor.putString("email", user.getEmail());
-                            Toast.makeText(getContext(), "réussi", Toast.LENGTH_SHORT).show();
+                            Toast.makeText(getContext(), "Bienvenue", Toast.LENGTH_SHORT).show();
                             NavController controller = Navigation.findNavController(view);
                             controller.navigate(R.id.fragConToFragMenu);
 
-                        } else {
-                            Toast.makeText(getContext(), Email, Toast.LENGTH_SHORT).show();
+                       } else {
+                            Toast.makeText(getContext(), "Email ou mot de passe incorrect", Toast.LENGTH_SHORT).show();
 
                         }
                     }
@@ -108,7 +121,7 @@ public class fragmentConexion extends Fragment {
                     @Override
                     public void onFailure(Call<LoginResponse> call, Throwable t) {
                         Log.d("TEST-CONNEXION", t.getMessage());
-                        Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
+                        Toast.makeText(getContext(), "Email ou mot de passe incorrect", Toast.LENGTH_SHORT).show();
 
 
                     }

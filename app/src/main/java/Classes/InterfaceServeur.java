@@ -14,7 +14,7 @@ public interface InterfaceServeur {
     /*@GET("/api/rendezvous")
     Call<List<Rendez_Vous>> getListeRendezvous();*/
     @FormUrlEncoded
-    @POST("/api/login")
+    @POST("/api/logingarage")
     Call<LoginResponse> login(@Field("email") String username,
                                @Field("password") String mdp
                                );
@@ -23,6 +23,12 @@ public interface InterfaceServeur {
 
     @GET("/api/rendezvous/confirme")
     Call<ReponseServeur> getListeRendezvousConfirme();
+
+
+    // la route pour appeler la notifications
+
+    @POST("/api/notifications/notifications/send/{notification}")
+    Call<ReponseServeur> getNotifications();
 
     @GET("/api/rendezvous/encours")
     Call<ReponseServeur> getListeRendezvousEncours();
