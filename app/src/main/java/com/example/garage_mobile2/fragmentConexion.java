@@ -110,7 +110,7 @@ public class fragmentConexion extends Fragment {
                             editor.putString("email", user.getEmail());
                             editor.apply();
                             Toast.makeText(getContext(), "Bienvenue", Toast.LENGTH_SHORT).show();
-                            Toast.makeText(getContext(), user.getNom(), Toast.LENGTH_SHORT).show();
+                            //Toast.makeText(getContext(), user.getNom(), Toast.LENGTH_SHORT).show();
                             NavController controller = Navigation.findNavController(view);
                             controller.navigate(R.id.fragConToFragMenu);
 

@@ -1,9 +1,12 @@
 package Classes;
 
+import com.google.gson.annotations.SerializedName;
+
 import java.util.List;
 
 public class ReponseServeur {
     List<Rendez_Vous> data;
+    @SerializedName("message")
     String message;
     String token;
     boolean statut;
@@ -25,5 +28,9 @@ public class ReponseServeur {
 
     public void setData(List<Rendez_Vous> data) {
         this.data = data;
+    }
+
+    public String getMessage() {
+        return message;
     }
 }

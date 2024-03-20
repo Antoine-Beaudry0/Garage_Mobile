@@ -4,6 +4,8 @@ import com.google.gson.annotations.SerializedName;
 
 public class LoginResponse {
 
+    @SerializedName("message")
+
     private String message ;
     private boolean error ;
     @SerializedName("user")

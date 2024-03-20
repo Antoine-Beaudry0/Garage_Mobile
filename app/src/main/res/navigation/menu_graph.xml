@@ -25,4 +25,9 @@
         android:name="com.example.garage_mobile2.Fragment_Profile"
         android:label="layout_fragment__profile"
         tools:layout="@layout/layout_fragment__profile" />
+    <fragment
+        android:id="@+id/fragment_RDVNonConfirme"
+        android:name="com.example.garage_mobile2.fragment_RDVNonConfirme"
+        android:label="layout_fragmentrdvnon_confirme"
+        tools:layout="@layout/layout_fragmentrdvnon_confirme" />
 </navigation>

@@ -18,5 +18,9 @@
         android:id="@+id/fragment_menu"
         android:name="com.example.garage_mobile2.Fragment_menu"
         android:label="layout_fragment_menu"
-        tools:layout="@layout/layout_fragment_menu" />
+        tools:layout="@layout/layout_fragment_menu" >
+        <action
+            android:id="@+id/fragMenuTofragCon"
+            app:destination="@id/fragmentConexion" />
+    </fragment>
 </navigation>

@@ -57,26 +57,20 @@
 
         <LinearLayout
             android:layout_width="match_parent"
-            android:layout_height="match_parent"
+            android:layout_height="536dp"
             android:gravity="center"
             android:orientation="horizontal">
 
             <Button
                 android:id="@+id/btnModifier"
-                android:layout_width="wrap_content"
+                android:layout_width="306dp"
                 android:layout_height="wrap_content"
                 android:layout_weight="1"
+                android:gravity="bottom"
                 android:text="Modifier Profile"
                 android:textColorLink="#CA2121"
                 android:textSize="20sp" />
 
-            <Button
-                android:id="@+id/btndelete"
-                android:layout_width="wrap_content"
-                android:layout_height="wrap_content"
-                android:layout_weight="1"
-                android:text="Supprimer Compte"
-                android:textSize="16sp" />
         </LinearLayout>
 
     </LinearLayout>
