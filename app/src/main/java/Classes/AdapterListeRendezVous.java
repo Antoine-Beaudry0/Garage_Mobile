@@ -4,7 +4,9 @@ import android.content.Context;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Button;
 import android.widget.TextView;
+import android.widget.Toast;
 
 import androidx.annotation.NonNull;
 import androidx.recyclerview.widget.LinearLayoutManager;
@@ -19,6 +21,7 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
 
      List<Rendez_Vous> rendezVousList;
      Context context;
+     Button btdelete;
 
     public AdapterListeRendezVous(List<Rendez_Vous> rendezVousList) {
         this.rendezVousList = rendezVousList;
@@ -27,6 +30,12 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
     public AdapterListeRendezVous(List<Rendez_Vous> rendezVousList, Context context) {
         this.rendezVousList = rendezVousList;
         this.context = context;
+    }
+
+    public void suprimerRDV(int position)
+    {
+        rendezVousList.remove(position);
+        notifyItemRemoved(position);
     }
 
 
@@ -82,8 +91,19 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
             tvNotificationEnvoye = itemView.findViewById(R.id.textViewNotificationEnvoye);
             tvIdVoiture = itemView.findViewById(R.id.textViewIdVoiture);
             tvIdStatut = itemView.findViewById(R.id.textViewIdStatut);
+            btdelete = itemView.findViewById(R.id.btndeleteRDV);
 
             recyclerViewServices = itemView.findViewById(R.id.rvServices);
+
+
+            btdelete.setOnLongClickListener(new View.OnLongClickListener() {
+                @Override
+                public boolean onLongClick(View view) {
+                    suprimerRDV(getLayoutPosition());
+                    Toast.makeText(itemView.getContext(),"Suppression de RendezVous", Toast.LENGTH_LONG).show();
+                    return false;
+                }
+            });
 
         }
     }

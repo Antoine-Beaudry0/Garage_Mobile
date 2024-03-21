@@ -1,0 +1,80 @@
+<?xml version="1.0" encoding="utf-8"?>
+<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#222831"
+    android:backgroundTint="#222831"
+    tools:context=".fragmentModifier">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:orientation="vertical">
+
+        <TextView
+            android:id="@+id/textView2"
+            android:layout_width="396dp"
+            android:layout_height="114dp"
+            android:gravity="center"
+            android:text="Modification Profil"
+            android:textColor="#DC1313"
+            android:textColorHint="#EC1616"
+            android:textSize="34sp"
+            android:textStyle="bold|italic" />
+
+        <LinearLayout
+            android:layout_width="wrap_content"
+            android:layout_height="504dp"
+            android:layout_margin="30dp"
+            android:gravity="center"
+            android:orientation="vertical">
+
+            <EditText
+                android:id="@+id/editTextText2"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Nom"
+                android:inputType="text"
+                android:textColorHint="#EFE3E3"
+                android:textSize="34sp" />
+
+            <EditText
+                android:id="@+id/editTextText3"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Prenom"
+                android:inputType="text"
+                android:textColorHint="#F1E9E9"
+                android:textSize="34sp" />
+
+            <EditText
+                android:id="@+id/editTextTextEmailAddress"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:ems="10"
+                android:hint="Email"
+                android:inputType="textEmailAddress"
+                android:textColorHint="#E3D7D7"
+                android:textSize="34sp" />
+
+            <Button
+                android:id="@+id/button"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="30dp"
+                android:text="Button"
+                android:textSize="34sp" />
+        </LinearLayout>
+    </LinearLayout>
+
+</FrameLayout>
+
+
+
+

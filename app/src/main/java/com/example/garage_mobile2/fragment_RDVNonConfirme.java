@@ -36,7 +36,6 @@ public class fragment_RDVNonConfirme extends Fragment {
     Button bt3;
 
 
-
     public fragment_RDVNonConfirme() {
         // Required empty public constructor
     }
@@ -56,6 +55,7 @@ public class fragment_RDVNonConfirme extends Fragment {
         recyclerViewRendezVousnonConfirme = view.findViewById(R.id.rvNonConfirme);
         recyclerViewRendezVousnonConfirme.setLayoutManager(new LinearLayoutManager(getContext()));
         //bt1 = view.findViewById(R.id.btnappellerClient);
+
 
         // Cacher le bouton
        // bt1.setVisibility(View.GONE);
