@@ -41,9 +41,6 @@ public class Fragment_Profile extends Fragment {
     TextView tvAFF;
 
 
-
-
-
     public Fragment_Profile() {
         // Required empty public constructor
     }
