@@ -54,11 +54,8 @@ public class fragment_RDVNonConfirme extends Fragment {
 
         recyclerViewRendezVousnonConfirme = view.findViewById(R.id.rvNonConfirme);
         recyclerViewRendezVousnonConfirme.setLayoutManager(new LinearLayoutManager(getContext()));
-        //bt1 = view.findViewById(R.id.btnappellerClient);
 
 
-        // Cacher le bouton
-       // bt1.setVisibility(View.GONE);
         getRendezVousnonConfirme();
     }
 
@@ -76,6 +73,7 @@ public class fragment_RDVNonConfirme extends Fragment {
 
 
                     AdapterListeRendezVous adapterRendezVous = new AdapterListeRendezVous(listeRendezVous, getContext());
+                    adapterRendezVous.setHideButtons(true);
                     recyclerViewRendezVousnonConfirme.setAdapter(adapterRendezVous);
                 } else {
                     Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();

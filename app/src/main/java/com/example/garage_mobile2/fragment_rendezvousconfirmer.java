@@ -83,7 +83,12 @@ public class fragment_rendezvousconfirmer extends Fragment {
             @Override
             public void onFailure(Call<ReponseServeur> call, Throwable t) {
                 Log.d("TEST-CONNEXION", t.getMessage());
-                Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
+                try {
+                    Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
+                }
+                catch (Exception exc)
+                {
+                }
 
             }
         });

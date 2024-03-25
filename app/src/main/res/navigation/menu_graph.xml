@@ -30,9 +30,4 @@
         android:name="com.example.garage_mobile2.fragment_RDVNonConfirme"
         android:label="layout_fragmentrdvnon_confirme"
         tools:layout="@layout/layout_fragmentrdvnon_confirme" />
-    <fragment
-        android:id="@+id/fragmentModifier"
-        android:name="com.example.garage_mobile2.fragmentModifier"
-        android:label="layout_fragment_modifier"
-        tools:layout="@layout/layout_fragment_modifier" />
 </navigation>

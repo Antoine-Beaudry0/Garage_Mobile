@@ -57,80 +57,88 @@ public class fragmentConexion extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
-        Button btConnexion  =view.findViewById(R.id.btConnexion) ;
-
-
-
-        TextView etemail = view.findViewById(R.id.idEmail);
-        TextView etpassword = view.findViewById(R.id.idpassword);
-
-
-
-        btConnexion.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
+        SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+        if(sharedPreferences.getBoolean("connecte" ,false) == true)
+        {
+            NavController controller = Navigation.findNavController(view);
+            controller.navigate(R.id.fragConToFragMenu);
+        }
+        else
+        {
+            Button btConnexion  =view.findViewById(R.id.btConnexion) ;
 
 
-                String Email = etemail.getText().toString();
-                String Password = etpassword.getText().toString();
 
-                // Valider que les champs email et mot de passe ne sont pas vides
-                if (Email.isEmpty()) {
-                    etemail.setError("Veuillez entrer votre adresse email");
-                    etemail.requestFocus();
-                    return;
-                }
-
-                if (Password.isEmpty()) {
-                    etpassword.setError("Veuillez entrer votre mot de passe");
-                    etpassword.requestFocus();
-                    return;
-                }
+            TextView etemail = view.findViewById(R.id.idEmail);
+            TextView etpassword = view.findViewById(R.id.idpassword);
 
 
-              InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
 
-                Call<LoginResponse> call = serveur.login(Email , Password);
-                call.enqueue(new Callback<LoginResponse>() {
-                    @Override
-                    public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
-                        LoginResponse loginResponse = response.body();
+            btConnexion.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
 
-                        if (response.isSuccessful()) {
 
-                            SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
-                            SharedPreferences.Editor editor = sharedPreferences.edit();
-                            editor.putString("token", response.body().getToken());
-                            Users user = response.body().getUser();
-                            editor.putInt("id", user.getId());
-                            editor.putString("prenom", user.getPrenom());
-                            editor.putString("nom", user.getNom());
-                            Toast.makeText(getContext(), user.getPrenom(), Toast.LENGTH_SHORT).show();
-                            editor.putString("email", user.getEmail());
-                            editor.apply();
-                            Toast.makeText(getContext(), "Bienvenue", Toast.LENGTH_SHORT).show();
-                            //Toast.makeText(getContext(), user.getNom(), Toast.LENGTH_SHORT).show();
-                            NavController controller = Navigation.findNavController(view);
-                            controller.navigate(R.id.fragConToFragMenu);
+                    String Email = etemail.getText().toString();
+                    String Password = etpassword.getText().toString();
 
-                       } else {
+                    // Valider que les champs email et mot de passe ne sont pas vides
+                    if (Email.isEmpty()) {
+                        etemail.setError("Veuillez entrer votre adresse email");
+                        etemail.requestFocus();
+                        return;
+                    }
+
+                    if (Password.isEmpty()) {
+                        etpassword.setError("Veuillez entrer votre mot de passe");
+                        etpassword.requestFocus();
+                        return;
+                    }
+
+
+                  InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
+
+                    Call<LoginResponse> call = serveur.login(Email , Password);
+                    call.enqueue(new Callback<LoginResponse>() {
+                        @Override
+                        public void onResponse(Call<LoginResponse> call, Response<LoginResponse> response) {
+                            LoginResponse loginResponse = response.body();
+
+                            if (response.isSuccessful()) {
+
+                                SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
+                                SharedPreferences.Editor editor = sharedPreferences.edit();
+                                editor.putString("token", response.body().getToken());
+                                Users user = response.body().getUser();
+                                editor.putInt("id", user.getId());
+                                editor.putString("prenom", user.getPrenom());
+                                editor.putString("nom", user.getNom());
+                                Toast.makeText(getContext(), user.getPrenom(), Toast.LENGTH_SHORT).show();
+                                editor.putString("email", user.getEmail());
+                                editor.putBoolean("connecte", true);
+                                editor.apply();
+                                Toast.makeText(getContext(), "Bienvenue", Toast.LENGTH_SHORT).show();
+                                //Toast.makeText(getContext(), user.getNom(), Toast.LENGTH_SHORT).show();
+                                NavController controller = Navigation.findNavController(view);
+                                controller.navigate(R.id.fragConToFragMenu);
+
+                           } else {
+                                Toast.makeText(getContext(), "Email ou mot de passe incorrect", Toast.LENGTH_SHORT).show();
+
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<LoginResponse> call, Throwable t) {
+                            Log.d("TEST-CONNEXION", t.getMessage());
                             Toast.makeText(getContext(), "Email ou mot de passe incorrect", Toast.LENGTH_SHORT).show();
 
+
                         }
-                    }
-
-                    @Override
-                    public void onFailure(Call<LoginResponse> call, Throwable t) {
-                        Log.d("TEST-CONNEXION", t.getMessage());
-                        Toast.makeText(getContext(), "Email ou mot de passe incorrect", Toast.LENGTH_SHORT).show();
-
-
-                    }
-                });
-            }
-        })
-        ;
-
+                    });
+                }
+            })
+            ;
+        }
     }
 }

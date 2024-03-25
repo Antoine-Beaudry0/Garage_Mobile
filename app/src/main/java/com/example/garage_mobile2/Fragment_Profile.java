@@ -62,7 +62,6 @@ public class Fragment_Profile extends Fragment {
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
 
         String prenom = sharedPreferences.getString("prenom", null);
@@ -74,7 +73,6 @@ public class Fragment_Profile extends Fragment {
         Toolbar toolbar = view.findViewById(R.id.toolbar);
 
         toolbar.inflateMenu(R.menu.mon_menu);
-
         toolbar.setOnMenuItemClickListener(new Toolbar.OnMenuItemClickListener() {
             @Override
             public boolean onMenuItemClick(MenuItem item) {
@@ -89,27 +87,6 @@ public class Fragment_Profile extends Fragment {
                     editor.clear();
                     editor.apply();
 
-                    //InterfaceServeur interfaceServer = RetrofitInstance.getInstance().create(InterfaceServeur.class);
-                   // Call<ReponseServeur> call = interfaceServer.logout(authToken); // Utilisation du token d'authentification
-/*                    call.enqueue(new Callback<ReponseServeur>() {
-
-                        @Override
-                        public void onResponse(Call<ReponseServeur> call, Response<ReponseServeur> response) {
-                            if (response.isSuccessful()) {
-//
-
-
-                            }
-                            else {
-                                Toast.makeText(getContext(), "Failed to logout", Toast.LENGTH_SHORT).show();
-                            }
-                        }*/
-                       /* @Override
-                        public void onFailure(Call<ReponseServeur> call, Throwable t) {
-                            Toast.makeText(getContext(), "Opération échoue -404", Toast.LENGTH_SHORT).show();
-                        }
-
-                    });*/
                     NavController navController = Navigation.findNavController(requireActivity(), R.id.fragmentContainerView);
                     navController.navigate(R.id.fragMenuTofragCon);
                 }
@@ -126,8 +103,6 @@ public class Fragment_Profile extends Fragment {
         tvPrenom.setText(prenom);
         tvEmail.setText(email);
         tvAFF.setText("Bienvenue" + " " + prenom);
-
-
 
 
 

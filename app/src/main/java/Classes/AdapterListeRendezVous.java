@@ -23,6 +23,10 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
      Context context;
      Button btdelete;
 
+     boolean hideButtons = false;
+
+
+
     public AdapterListeRendezVous(List<Rendez_Vous> rendezVousList) {
         this.rendezVousList = rendezVousList;
     }
@@ -30,6 +34,11 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
     public AdapterListeRendezVous(List<Rendez_Vous> rendezVousList, Context context) {
         this.rendezVousList = rendezVousList;
         this.context = context;
+    }
+
+    public void setHideButtons(boolean hide)
+    {
+        hideButtons = hide;
     }
 
     public void suprimerRDV(int position)
@@ -65,6 +74,14 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
             rendezVousViewHolder.recyclerViewServices.setAdapter(serviceAdapter);
         }
 
+        if(hideButtons == true)
+        {
+            rendezVousViewHolder.btTermine.setVisibility(View.GONE);
+            rendezVousViewHolder.btBientot.setVisibility(View.GONE);
+            rendezVousViewHolder.btAppeler.setVisibility(View.GONE);
+        }
+
+
     }
 
 
@@ -83,6 +100,8 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
         TextView tvIdStatut;
         RecyclerView recyclerViewServices;
 
+        Button btAppeler, btTermine, btBientot;
+
         public RendezVousViewHolder(@NonNull View itemView) {
             super(itemView);
             tvDateHeureDebut = itemView.findViewById(R.id.textViewDateHeureDebut);
@@ -92,6 +111,10 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
             tvIdVoiture = itemView.findViewById(R.id.textViewIdVoiture);
             tvIdStatut = itemView.findViewById(R.id.textViewIdStatut);
             btdelete = itemView.findViewById(R.id.btndeleteRDV);
+
+            btAppeler = itemView.findViewById(R.id.btnappellerClient);
+            btTermine = itemView.findViewById(R.id.btnRendezVousTermine);
+            btBientot = itemView.findViewById(R.id.btnRDVbientotTermine);
 
             recyclerViewServices = itemView.findViewById(R.id.rvServices);
 
