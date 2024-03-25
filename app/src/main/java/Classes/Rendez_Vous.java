@@ -1,13 +1,16 @@
 package Classes;
 
-import com.google.gson.JsonObject;
 import com.google.gson.annotations.SerializedName;
 
 import java.util.List;
 
 public class Rendez_Vous {
     @SerializedName("id")
-    private int id;
+    private String id;
+
+
+    @SerializedName("voiture_details")
+    private VoitureDetails voitureDetails;
 
     @SerializedName("services")
     private List<Servic_Rendezvous> services;
@@ -18,8 +21,9 @@ public class Rendez_Vous {
     @SerializedName("dateHeureFin")
     private String dateHeureFin;
 
-    @SerializedName("commentaire")
-    private String commentaire;
+
+    @SerializedName("tel")
+    private String tel;
 
     @SerializedName("notificationEnvoye")
     private int notificationEnvoye;
@@ -30,28 +34,48 @@ public class Rendez_Vous {
     @SerializedName("id_Statut")
     private int id_Statut;
 
-
-
     // Constructeur
-    public Rendez_Vous(int id, List<Servic_Rendezvous> services, String dateHeureDebut, String dateHeureFin, String commentaire, int notificationEnvoye, int id_Voiture, int id_Statut) {
+    public Rendez_Vous(String id,VoitureDetails voitureDetails, List<Servic_Rendezvous> services, String dateHeureDebut, String dateHeureFin, String tel, int notificationEnvoye, int id_Voiture, int id_Statut) {
         this.id = id;
+        this.voitureDetails = voitureDetails;
         this.services = services;
         this.dateHeureDebut = dateHeureDebut;
         this.dateHeureFin = dateHeureFin;
-        this.commentaire = commentaire;
+        this.tel = tel;
         this.notificationEnvoye = notificationEnvoye;
         this.id_Voiture = id_Voiture;
         this.id_Statut = id_Statut;
     }
 
     // Getters et Setters
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public VoitureDetails getVoitureDetails() {
+        return voitureDetails;
+    }
+
+    public void setVoitureDetails(VoitureDetails voitureDetails) {
+        this.voitureDetails = voitureDetails;
+    }
+
+
+
+    public void setId(String id) {
         this.id = id;
     }
+
+    public String getTel() {
+        return tel;
+    }
+
+    public void setTel(String tel) {
+        this.tel = tel;
+    }
+
+
+
 
     public List<Servic_Rendezvous> getServices() {
         return services;
@@ -77,13 +101,6 @@ public class Rendez_Vous {
         this.dateHeureFin = dateHeureFin;
     }
 
-    public String getCommentaire() {
-        return commentaire;
-    }
-
-    public void setCommentaire(String commentaire) {
-        this.commentaire = commentaire;
-    }
 
     public int isNotificationEnvoye() {
         return notificationEnvoye;

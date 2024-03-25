@@ -8,7 +8,10 @@ import retrofit2.http.Field;
 import retrofit2.http.FormUrlEncoded;
 import retrofit2.http.GET;
 import retrofit2.http.Header;
+import retrofit2.http.PATCH;
 import retrofit2.http.POST;
+import retrofit2.http.PUT;
+import retrofit2.http.Path;
 import retrofit2.http.Query;
 
 public interface InterfaceServeur {
@@ -36,6 +39,12 @@ public interface InterfaceServeur {
 
     @GET("/api/rendezvous/encours")
     Call<ReponseServeur> getListeRendezvousEncours();
+
+
+    @PATCH("/api/rendezvous/terminer/{id}")
+    Call<ReponseServeur> termine(@Path("id") String id);
+    @PATCH("/api/rendezvous/confirmer/{id}")
+    Call<ReponseServeur> confirme(@Path("id") String id);
 
     @POST("/api/logout")
     Call<ReponseServeur> logout(String Auth);

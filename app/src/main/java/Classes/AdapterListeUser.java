@@ -81,26 +81,7 @@ public class AdapterListeUser extends RecyclerView.Adapter {
             tvnom = itemView.findViewById(R.id.idNom);
             tvPrenom = itemView.findViewById(R.id.idPrenom);
             tvCourriel = itemView.findViewById(R.id.idEmail2);
-            btnmodif = itemView.findViewById(R.id.btnModifier);
 
-
-
-       /*
-            itemView.setOnClickListener(new View.OnClickListener() {
-                @Override
-                public void onClick(View view) {
-                    interfaceParticipant.gestionClick(getLayoutPosition(), liste.get(getLayoutPosition()));
-
-                }
-            });*/
-/*
-            btndetail.setOnLongClickListener(new View.OnLongClickListener() {
-                @Override
-                public boolean onLongClick(View v) {
-                    interfaceUser.gestionClick(getLayoutPosition(), liste.get(getLayoutPosition()));
-                    return false;
-                }
-            });*/
 
             btndelete.setOnLongClickListener(new View.OnLongClickListener() {
                 @Override

@@ -29,31 +29,31 @@
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/textViewCommentaire"
+            android:id="@+id/tvmarque"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Commentaire:"
+            android:text="marque"
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/textViewNotificationEnvoye"
+            android:id="@+id/tvmodele"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Notification envoyée:"
+            android:text="modele"
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/textViewIdVoiture"
+            android:id="@+id/tvtel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ID de la voiture:"
+            android:text="Telephone"
             android:textSize="24sp" />
 
         <TextView
-            android:id="@+id/textViewIdStatut"
+            android:id="@+id/idRDV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ID du statut:"
+            android:text="IdRDV"
             android:textSize="24sp" />
 
         <androidx.recyclerview.widget.RecyclerView

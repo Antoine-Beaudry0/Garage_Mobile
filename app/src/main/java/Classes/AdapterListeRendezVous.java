@@ -1,6 +1,11 @@
 package Classes;
 
+import static androidx.core.content.ContextCompat.startActivity;
+
 import android.content.Context;
+import android.content.Intent;
+import android.net.Uri;
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -9,21 +14,30 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import androidx.annotation.NonNull;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 
 import com.example.garage_mobile2.R;
 import com.google.gson.JsonObject;
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
+
+import retrofit2.Call;
+import retrofit2.Callback;
+import retrofit2.Response;
 
 public class AdapterListeRendezVous extends RecyclerView.Adapter {
 
      List<Rendez_Vous> rendezVousList;
      Context context;
-     Button btdelete;
+
 
      boolean hideButtons = false;
+    boolean hideBut = false;
 
 
 
@@ -40,6 +54,13 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
     {
         hideButtons = hide;
     }
+    public void setHideB(boolean hide)
+    {
+        hideBut = hide;
+    }
+
+
+
 
     public void suprimerRDV(int position)
     {
@@ -58,14 +79,21 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
 
     @Override
     public void onBindViewHolder(@NonNull RecyclerView.ViewHolder holder, int position) {
+
+
         RendezVousViewHolder rendezVousViewHolder = (RendezVousViewHolder) holder;
 
-        rendezVousViewHolder.tvDateHeureDebut.setText(rendezVousList.get(position).getDateHeureDebut());
-        rendezVousViewHolder.tvDateHeureFin.setText(rendezVousList.get(position).getDateHeureFin());
-        rendezVousViewHolder.tvIdStatut.setText(rendezVousList.get(position).getId_Statut()+"");
-        rendezVousViewHolder.tvCommentaire.setText(rendezVousList.get(position).getCommentaire());
-        rendezVousViewHolder.tvIdVoiture.setText(rendezVousList.get(position).getId_Voiture()+"");
-        rendezVousViewHolder.tvNotificationEnvoye.setText(String.valueOf(rendezVousList.get(position).isNotificationEnvoye()));
+        Rendez_Vous rendezVous = rendezVousList.get(position);
+        VoitureDetails voitureDetails = rendezVous.getVoitureDetails();
+
+        rendezVousViewHolder.tvDateHeureDebut.setText(formatDate(rendezVousList.get(position).getDateHeureDebut()));
+        rendezVousViewHolder.tvDateHeureFin.setText(formatDate(rendezVousList.get(position).getDateHeureFin()));
+        rendezVousViewHolder.tvTel.setText(rendezVousList.get(position).getTel());
+        //rendezVousViewHolder.tvmarque.setText(voitureDetails.getMarque());
+       // rendezVousViewHolder.tvmodele.setText(voitureDetails.getModele());
+        rendezVousViewHolder.tvId.setText(rendezVousList.get(position).getId());
+
+
 
         List<Servic_Rendezvous> serviceList = rendezVousList.get(position).getServices();
         if (serviceList != null && !serviceList.isEmpty()) {
@@ -81,6 +109,12 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
             rendezVousViewHolder.btAppeler.setVisibility(View.GONE);
         }
 
+        if(hideBut == true)
+        {
+            rendezVousViewHolder.btdelete.setVisibility(View.GONE);
+
+        }
+
 
     }
 
@@ -91,27 +125,28 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
     }
 
     public class RendezVousViewHolder extends RecyclerView.ViewHolder {
-
-        TextView tvDateHeureDebut;
+        int id;
+        TextView tvDateHeureDebut ,tvId;
         TextView tvDateHeureFin;
-        TextView tvCommentaire;
-        TextView tvNotificationEnvoye;
-        TextView tvIdVoiture;
-        TextView tvIdStatut;
+        TextView tvmodele;
+        TextView tvmarque , tvTel;
         RecyclerView recyclerViewServices;
 
-        Button btAppeler, btTermine, btBientot;
+        Button btdelete;
+
+        Button btAppeler, btTermine, btBientot ;
 
         public RendezVousViewHolder(@NonNull View itemView) {
             super(itemView);
+
+
             tvDateHeureDebut = itemView.findViewById(R.id.textViewDateHeureDebut);
             tvDateHeureFin = itemView.findViewById(R.id.textViewDateHeureFin);
-            tvCommentaire = itemView.findViewById(R.id.textViewCommentaire);
-            tvNotificationEnvoye = itemView.findViewById(R.id.textViewNotificationEnvoye);
-            tvIdVoiture = itemView.findViewById(R.id.textViewIdVoiture);
-            tvIdStatut = itemView.findViewById(R.id.textViewIdStatut);
+            tvmodele = itemView.findViewById(R.id.tvmodele);
+            tvmarque = itemView.findViewById(R.id.tvmarque);
+            tvTel = itemView.findViewById(R.id.tvtel);
             btdelete = itemView.findViewById(R.id.btndeleteRDV);
-
+            tvId = itemView.findViewById(R.id.idRDV);
             btAppeler = itemView.findViewById(R.id.btnappellerClient);
             btTermine = itemView.findViewById(R.id.btnRendezVousTermine);
             btBientot = itemView.findViewById(R.id.btnRDVbientotTermine);
@@ -128,6 +163,77 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
                 }
             });
 
+            btBientot.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+
+                }
+            });
+
+            btAppeler.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String phone = tvTel.getText().toString(); // Utilisez getText() pour obtenir le texte de la TextView
+                    Intent intent = new Intent(Intent.ACTION_DIAL, Uri.fromParts("tel", phone, null));
+                    context.startActivity(intent); // Utilisez context.startActivity() au lieu de startActivity()
+                }
+            });
+
+            btTermine.setOnClickListener(new View.OnClickListener() {
+                @Override
+                public void onClick(View view) {
+                    String idRendezVous = tvId.getText().toString();
+
+                    InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
+
+                    Call<ReponseServeur> call = serveur.termine(idRendezVous);
+                    call.enqueue(new Callback<ReponseServeur>() {
+                        @Override
+                        public void onResponse(Call<ReponseServeur> call, Response<ReponseServeur> response) {
+                            if (response.isSuccessful()) {
+                                rendezVousList = response.body().getData();
+                                notifyDataSetChanged();
+
+                            } else {
+                                Toast.makeText(itemView.getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
+                            }
+                        }
+
+                        @Override
+                        public void onFailure(Call<ReponseServeur> call, Throwable t) {
+                            Log.d("TEST-CONNEXION", t.getMessage());
+                            try {
+                                Toast.makeText(itemView.getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
+                            }
+                            catch (Exception exc)
+                            {
+                            }
+
+                        }
+                    });
+
+
+
+
+                }
+            });
+
+        }
+
+
+
+
+    }
+
+    private String formatDate(String dateTime) {
+        try {
+            SimpleDateFormat inputFormat = new SimpleDateFormat("yyyy-MM-dd'T'HH:mm:ss");
+            SimpleDateFormat outputFormat = new SimpleDateFormat("dd/MM/yyyy HH:mm"); // Le format de date souhaité
+            Date date = inputFormat.parse(dateTime);
+            return outputFormat.format(date);
+        } catch (Exception e) {
+            e.printStackTrace();
+            return "Format de date incorrect"; // Message en cas d'erreur de formatage de date
         }
     }
 }
