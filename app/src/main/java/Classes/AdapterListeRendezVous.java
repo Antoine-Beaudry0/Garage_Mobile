@@ -39,6 +39,8 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
      boolean hideButtons = false;
     boolean hideBut = false;
 
+    boolean hidebutt = false;
+
 
 
     public AdapterListeRendezVous(List<Rendez_Vous> rendezVousList) {
@@ -57,6 +59,11 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
     public void setHideB(boolean hide)
     {
         hideBut = hide;
+    }
+
+    public void setHide(boolean hide)
+    {
+        hidebutt = hide;
     }
 
 
@@ -89,8 +96,8 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
         rendezVousViewHolder.tvDateHeureDebut.setText(formatDate(rendezVousList.get(position).getDateHeureDebut()));
         rendezVousViewHolder.tvDateHeureFin.setText(formatDate(rendezVousList.get(position).getDateHeureFin()));
         rendezVousViewHolder.tvTel.setText(rendezVousList.get(position).getTel());
-        //rendezVousViewHolder.tvmarque.setText(voitureDetails.getMarque());
-       // rendezVousViewHolder.tvmodele.setText(voitureDetails.getModele());
+        rendezVousViewHolder.tvmarque.setText(voitureDetails.getMarque());
+       rendezVousViewHolder.tvmodele.setText(voitureDetails.getModele());
         rendezVousViewHolder.tvId.setText(rendezVousList.get(position).getId());
 
 
@@ -112,6 +119,14 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
         if(hideBut == true)
         {
             rendezVousViewHolder.btdelete.setVisibility(View.GONE);
+
+        }
+
+        if(hidebutt == true)
+        {
+            rendezVousViewHolder.btdelete.setVisibility(View.GONE);
+            rendezVousViewHolder.btTermine.setVisibility(View.GONE);
+            rendezVousViewHolder.btBientot.setVisibility(View.GONE);
 
         }
 
@@ -183,6 +198,7 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
                 @Override
                 public void onClick(View view) {
                     String idRendezVous = tvId.getText().toString();
+                    int pos = getLayoutPosition();
 
                     InterfaceServeur serveur = RetrofitInstance.getInstance().create(InterfaceServeur.class);
 
@@ -191,7 +207,8 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
                         @Override
                         public void onResponse(Call<ReponseServeur> call, Response<ReponseServeur> response) {
                             if (response.isSuccessful()) {
-                                rendezVousList = response.body().getData();
+                                Rendez_Vous rendezVous = response.body().getSingledata();
+                                rendezVousList.set(pos, rendezVous);
                                 notifyDataSetChanged();
 
                             } else {

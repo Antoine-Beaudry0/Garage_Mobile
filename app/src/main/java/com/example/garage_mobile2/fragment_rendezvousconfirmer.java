@@ -74,7 +74,7 @@ public class fragment_rendezvousconfirmer extends Fragment {
 
 
                     AdapterListeRendezVous adapterRendezVous = new AdapterListeRendezVous(listeRendezVous, getContext());
-                    adapterRendezVous.setHideB(true);
+                    adapterRendezVous.setHide(true);
                     recyclerViewRendezVousConfirme.setAdapter(adapterRendezVous);
                 } else {
                     Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
