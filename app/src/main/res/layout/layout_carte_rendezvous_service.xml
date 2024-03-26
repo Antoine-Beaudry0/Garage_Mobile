@@ -12,7 +12,7 @@
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:layout_marginTop="10dp"
-        app:cardBackgroundColor="#4D648A"
+        app:cardBackgroundColor="@color/gray"
         app:cardCornerRadius="8dp"
         app:cardElevation="4dp"
         app:cardPreventCornerOverlap="true"
@@ -29,24 +29,24 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Prix"
-                android:textColor="#000000"
-                android:textSize="24sp" />
+                android:textColor="@color/white"
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/idtype"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Type"
-                android:textColor="#000000"
-                android:textSize="24sp" />
+                android:textColor="@color/white"
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/idtemp"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Temps"
-                android:textColor="#000000"
-                android:textSize="24sp" />
+                android:textColor="@color/white"
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/idtitre"
@@ -54,32 +54,32 @@
                 android:layout_height="wrap_content"
                 android:maxLines="1"
                 android:text="Titre"
-                android:textColor="#000000"
-                android:textSize="24sp" />
+                android:textColor="@color/white"
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/idchosen"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Chosen"
-                android:textColor="#000000"
-                android:textSize="24sp" />
+                android:textColor="@color/white"
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/idposition"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Position"
-                android:textColor="#000000"
-                android:textSize="24sp" />
+                android:textColor="@color/white"
+                android:textSize="16dp" />
 
             <TextView
                 android:id="@+id/idprestation"
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:text="Prestation"
-                android:textColor="#000000"
-                android:textSize="24sp" />
+                android:textColor="@color/white"
+                android:textSize="16dp" />
 
         </LinearLayout>
 

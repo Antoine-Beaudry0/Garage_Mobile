@@ -4,8 +4,7 @@
     android:layout_width="match_parent"
     android:layout_height="wrap_content"
     android:layout_margin="8dp"
-    android:background="#985050"
-    android:backgroundTint="#B052BF"
+    android:backgroundTint="@color/background"
     app:cardCornerRadius="8dp">
 
     <LinearLayout
@@ -19,42 +18,48 @@
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Date et heure de début:"
-            android:textSize="24sp" />
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/textViewDateHeureFin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Date et heure de fin:"
-            android:textSize="24sp" />
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/tvmarque"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="marque"
-            android:textSize="24sp" />
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/tvmodele"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="modele"
-            android:textSize="24sp" />
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/tvtel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="Telephone"
-            android:textSize="24sp" />
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <TextView
             android:id="@+id/idRDV"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
             android:text="IdRDV"
-            android:textSize="24sp" />
+            android:textColor="@color/white"
+            android:textSize="16sp" />
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvServices"
@@ -69,12 +74,16 @@
 
             <Button
                 android:id="@+id/btnappellerClient"
-                android:layout_width="351dp"
+                android:layout_width="match_parent"
                 android:layout_height="55dp"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
                 android:drawableLeft="@drawable/ic_phone2"
                 android:text="Appeler le client"
-                android:textSize="24sp"
-                android:textStyle="bold|italic" />
+                android:textSize="20sp"
+
+                android:textStyle="bold"
+                app:cornerRadius="0dp" />
 
             <Button
                 android:id="@+id/btnRDVbientotTermine"
@@ -82,15 +91,21 @@
                 android:layout_height="59dp"
                 android:text="Rendez-vous bientôt terminé"
                 android:textSize="20sp"
-                android:textStyle="bold|italic" />
+                android:textStyle="bold"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                app:cornerRadius="0dp" />
 
             <Button
                 android:id="@+id/btnRendezVousTermine"
                 android:layout_width="364dp"
                 android:layout_height="wrap_content"
                 android:text="Rendez-vous terminé"
-                android:textSize="24sp"
-                android:textStyle="bold|italic" />
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:backgroundTint="@color/white"
+                android:textColor="@color/black"
+                app:cornerRadius="0dp" />
 
             <Button
                 android:id="@+id/btndeleteRDV"
@@ -98,9 +113,11 @@
                 android:layout_height="58dp"
                 android:drawableLeft="@drawable/ic_delete"
                 android:text="Supprimer"
-                android:textColorLink="#A632BA"
-                android:textSize="24sp"
-                android:textStyle="bold|italic" />
+                android:textSize="20sp"
+                android:textStyle="bold"
+                android:backgroundTint="@color/red"
+                android:textColor="@color/white"
+                app:cornerRadius="0dp" />
         </LinearLayout>
 
     </LinearLayout>

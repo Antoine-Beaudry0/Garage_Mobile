@@ -3,14 +3,13 @@
     <style name="Base.Theme.Garage_mobile2" parent="Theme.Material3.Light">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
-        <item name="colorPrimary">#860D0D</item>
         <item name="colorPrimaryVariant">#FFFFFF</item>
-        <item name="android:statusBarColor">#BA2C2C</item>
+        <item name="android:statusBarColor">#000000</item>
 
         <item name="colorSecondary">#FF9800</item>
         <item name="colorSecondaryVariant">#000000</item>
 
-        <item name="colorAccent">#9C27B0</item>
+        <item name="colorAccent">#929292</item>
     </style>
 
     <style name="Theme.Garage_mobile2" parent="Base.Theme.Garage_mobile2" />

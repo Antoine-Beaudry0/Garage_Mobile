@@ -30,16 +30,17 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#FFFFFF"
             android:ems="10"
-            android:text="louis.martin@example.com"
             android:inputType="textEmailAddress"
+            android:text="louis.martin@example.com"
             android:textColor="#FFFFFF"
-            android:textSize="34sp" />
+            android:textSize="20sp" />
 
 
         <TextView
             android:id="@+id/tvmdp"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
             android:text="Mot de passe"
             android:textAlignment="center"
             android:textColor="#E0E0E0"
@@ -51,30 +52,31 @@
             android:layout_height="wrap_content"
             android:backgroundTint="#FFFFFF"
             android:ems="10"
-            android:text="password"
             android:inputType="textPassword"
+            android:text="password"
             android:textColor="#FFFFFF"
-            android:textSize="34sp" />
+            android:textSize="20sp" />
 
         <Button
             android:id="@+id/btConnexion"
             android:layout_width="300dp"
             android:layout_height="wrap_content"
             android:layout_marginTop="32dp"
-            android:backgroundTint="?attr/colorPrimary"
+            android:backgroundTint="@color/white"
             android:text="Connexion"
-            android:textColor="?attr/colorPrimaryVariant"
-            android:textSize="34sp" />
+            android:textColor="@color/black"
+            android:textSize="20sp" />
 
         <TextView
             android:id="@+id/idou"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="ou"
+            android:layout_marginTop="20dp"
+            android:text="Vous n'êtes pas membre?"
             android:textAlignment="center"
             android:textColor="#E0E0E0"
             android:textColorLink="#3F51B5"
-            android:textSize="34sp" />
+            android:textSize="16sp" />
 
         <Button
             android:id="@+id/btInscription"
@@ -83,7 +85,7 @@
             android:backgroundTint="?attr/colorPrimaryVariant"
             android:text="Inscription"
             android:textColor="?attr/colorSecondaryVariant"
-            android:textSize="34sp" />
+            android:textSize="20sp" />
 
     </LinearLayout>
 </FrameLayout>
