@@ -7,12 +7,12 @@
 
     <fragment
         android:id="@+id/fragment_RendezvousEncoursV"
-        android:name="com.example.garage_mobile2.fragment_rendezvous"
+        android:name="com.example.garage_mobile2.fragment_RendezvousEncoursV"
         android:label="layout_fragment_rendezvous"
         tools:layout="@layout/layout_fragment_rendezvous" />
     <fragment
         android:id="@+id/fragment_rendezvous2"
-        android:name="com.example.garage_mobile2.fragment_rendezvousconfirmer"
+        android:name="com.example.garage_mobile2.fragment_rendezvous"
         android:label="layout_fragment_rendezvousconfirmer"
         tools:layout="@layout/layout_fragment_rendezvousconfirmer" />
     <fragment

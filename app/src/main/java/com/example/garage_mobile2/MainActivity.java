@@ -36,8 +36,6 @@ public class MainActivity extends AppCompatActivity {
 
         setTitle(" Garage Mobile");
 
-
-
     }
 
     @Override
