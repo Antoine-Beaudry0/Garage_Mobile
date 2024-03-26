@@ -17,13 +17,20 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             app:navGraph="@navigation/menu_graph"
+            app:cardBackgroundColor="@color/black"
             android:layout_weight="1" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:layout_width="match_parent"
             android:id="@+id/bottomNav"
+            android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            app:menu="@menu/menu" />
+            android:background="#000000"
+            app:itemIconTint="@color/white"
+            app:itemRippleColor="@color/black"
+            app:itemTextColor="@color/white"
+            app:itemActiveIndicatorStyle="@color/white"
+            app:menu="@menu/menu"/>
+
     </LinearLayout>
 
 </FrameLayout>

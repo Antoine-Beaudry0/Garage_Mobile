@@ -7,5 +7,4 @@
         android:icon="@drawable/ic_deconnecte"
         android:title="Deconexion"
         app:showAsAction="always" />
-
 </menu>

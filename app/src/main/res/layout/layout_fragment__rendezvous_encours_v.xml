@@ -4,7 +4,8 @@
     android:id="@+id/fragmentRendezvousEnCours"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".fragment_RendezvousEncoursV">
+    tools:context=".fragment_RendezvousEncoursV"
+    android:background="@color/black">
 
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/rvRendezvousEncours"
