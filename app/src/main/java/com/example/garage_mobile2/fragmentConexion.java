@@ -36,7 +36,7 @@ import retrofit2.Response;
 
 public class fragmentConexion extends Fragment {
 
-    Button  btinscription;
+
 
 
     public fragmentConexion() {
@@ -59,7 +59,7 @@ public class fragmentConexion extends Fragment {
     @Override
     public void onViewCreated(@NonNull View view, @Nullable Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
-        btinscription = view.findViewById(R.id.btInscription);
+    Button   btinscription = view.findViewById(R.id.btInscription);
 
         SharedPreferences sharedPreferences = getActivity().getSharedPreferences("MyPrefs", Context.MODE_PRIVATE);
         if (sharedPreferences.getBoolean("connecte", false)) {
@@ -132,11 +132,10 @@ public class fragmentConexion extends Fragment {
         btinscription.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-
                 Intent intent = new Intent();
                 intent.setAction(Intent.ACTION_VIEW);
                 intent.addCategory(Intent.CATEGORY_BROWSABLE);
-                intent.setData(Uri.parse("http://172.16.87.101:8000/logingarage"));
+                intent.setData(Uri.parse("http:172.16.87.101:8000/logingarage"));
                 startActivity(intent);
             }
 
