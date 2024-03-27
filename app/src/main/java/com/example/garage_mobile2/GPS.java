@@ -79,7 +79,7 @@ public class GPS extends AppCompatActivity {
             public void onLocationResult(@NonNull LocationResult locationResult) {
                 super.onLocationResult(locationResult);
 
-                updateUIValues( locationResult.getLastLocation());
+                updateUIValues(locationResult.getLastLocation());
             }
         };
 
@@ -148,25 +148,19 @@ public class GPS extends AppCompatActivity {
     @Override
     public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
         super.onRequestPermissionsResult(requestCode, permissions, grantResults);
-        switch(requestCode)
-        {
+        switch (requestCode) {
             case PERMISSIONS_FINE_LOCATION:
-            if (grantResults[0] == PackageManager.PERMISSION_GRANTED)
-            {
-                updateGPS();
-            }
-            else
-            {
-                Toast.makeText(this, "la permission est requise", Toast.LENGTH_SHORT).show();
-            }
+                if (grantResults[0] == PackageManager.PERMISSION_GRANTED) {
+                    updateGPS();
+                } else {
+                    Toast.makeText(this, "la permission est requise", Toast.LENGTH_SHORT).show();
+                }
         }
     }
 
-    private  void updateGPS()
-    {
+    private void updateGPS() {
         fusedLocationProviderClient = LocationServices.getFusedLocationProviderClient(GPS.this);
-        if(ActivityCompat.checkSelfPermission(this,Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED)
-        {
+        if (ActivityCompat.checkSelfPermission(this, Manifest.permission.ACCESS_FINE_LOCATION) == PackageManager.PERMISSION_GRANTED) {
             fusedLocationProviderClient.getLastLocation().addOnSuccessListener(this, new OnSuccessListener<Location>() {
                 @Override
                 public void onSuccess(Location location) {
@@ -174,29 +168,24 @@ public class GPS extends AppCompatActivity {
 
                 }
             });
-        }
-        else {
-            if(Build.VERSION.SDK_INT >= Build.VERSION_CODES.M)
-            {
-                requestPermissions(new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION} , PERMISSIONS_FINE_LOCATION);
+        } else {
+            if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                requestPermissions(new String[]{android.Manifest.permission.ACCESS_FINE_LOCATION}, PERMISSIONS_FINE_LOCATION);
             }
         }
     }
 
 
-
-
-    public void verifierPermission()
-    {
+    public void verifierPermission() {
         ActivityResultLauncher<String[]> permissionsLauncher = registerForActivityResult(
                 new ActivityResultContracts.RequestMultiplePermissions(),
                 new ActivityResultCallback<Map<String, Boolean>>() {
                     @Override
                     public void onActivityResult(Map<String, Boolean> result) {
 
-                        result.forEach((permission,reponse) ->
+                        result.forEach((permission, reponse) ->
                         {
-                            Log.d("PERMISSIONS", permission + " : " + reponse );
+                            Log.d("PERMISSIONS", permission + " : " + reponse);
                         });
 
                     }
@@ -212,43 +201,39 @@ public class GPS extends AppCompatActivity {
     }
 
 
+    private void updateUIValues(Location location) {
+        if (location != null) {
+            tv_lat.setText(String.valueOf(location.getLatitude()));
+            tv_lon.setText(String.valueOf(location.getLongitude()));
+            tv_accuracy.setText(String.valueOf(location.getAccuracy()));
 
-    private void updateUIValues(Location location)
-    {
-       tv_lat.setText(String.valueOf(location.getLatitude()));
-        tv_lon.setText(String.valueOf(location.getLongitude()));
-        tv_accuracy.setText(String.valueOf(location.getLatitude()));
+            if (location.hasAltitude()) {
+                tv_altitude.setText(String.valueOf(location.getAltitude()));
+            } else {
+                tv_altitude.setText("pas disponible");
+            }
 
-        if(location.hasAltitude())
-        {
-            tv_altitude.setText(String.valueOf(location.getAltitude()));
-        }
-        else
-        {
+            if (location.hasSpeed()) {
+                tv_speed.setText(String.valueOf(location.getSpeed()));
+            } else {
+                tv_speed.setText("pas disponible");
+            }
+
+            Geocoder geocoder = new Geocoder(GPS.this);
+            try {
+                List<Address> addresses = geocoder.getFromLocation(location.getLatitude(), location.getLongitude(), 1);
+                tv_address.setText(addresses.get(0).getAddressLine(0));
+            } catch (Exception e) {
+                tv_address.setText("pas possible de localiser l'adresse");
+            }
+        } else {
+            // Update UI to show location is not available
+            tv_lat.setText("pas de localisation");
+            tv_lon.setText("pas de localisation");
+            tv_accuracy.setText("pas de localisation");
             tv_altitude.setText("pas disponible");
-        }
-
-        if(location.hasSpeed())
-        {
-            tv_speed.setText(String.valueOf(location.getSpeed()));
-        }
-        else
-        {
             tv_speed.setText("pas disponible");
-        }
-
-        Geocoder geocoder = new Geocoder((GPS.this));
-
-        try {
-            List<Address> addresses = geocoder.getFromLocation(location.getLatitude() , location.getLongitude() , 1);
-
-            tv_address.setText(addresses.get(0).getAddressLine(0));
-        }
-        catch (Exception e)
-        {
-             tv_address.setText("pas possible de localiser l'addresse");
+            tv_address.setText("pas possible de localiser l'adresse");
         }
     }
-
 }
-

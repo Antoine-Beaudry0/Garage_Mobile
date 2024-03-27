@@ -77,9 +77,9 @@
                 android:layout_width="match_parent"
                 android:layout_height="55dp"
                 android:backgroundTint="@color/white"
-                android:textColor="@color/black"
                 android:drawableLeft="@drawable/ic_phone2"
                 android:text="Appeler le client"
+                android:textColor="@color/black"
                 android:textSize="20sp"
 
                 android:textStyle="bold"
@@ -111,12 +111,12 @@
                 android:id="@+id/btndeleteRDV"
                 android:layout_width="match_parent"
                 android:layout_height="58dp"
+                android:backgroundTint="@color/red"
                 android:drawableLeft="@drawable/ic_delete"
                 android:text="Supprimer"
+                android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:backgroundTint="@color/red"
-                android:textColor="@color/white"
                 app:cornerRadius="0dp" />
         </LinearLayout>
 
