@@ -1,7 +1,9 @@
 package com.example.garage_mobile2;
 
 import android.content.Context;
+import android.content.Intent;
 import android.content.SharedPreferences;
+import android.net.Uri;
 import android.os.Bundle;
 
 import androidx.annotation.NonNull;
@@ -33,6 +35,8 @@ import retrofit2.Response;
 
 
 public class fragmentConexion extends Fragment {
+
+    Button  btinscription;
 
 
     public fragmentConexion() {
@@ -140,5 +144,22 @@ public class fragmentConexion extends Fragment {
             })
             ;
         }
+
+
+
+
+        btinscription.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+
+                Intent intent = new Intent();
+                intent.setAction(Intent.ACTION_VIEW);
+                intent.addCategory(Intent.CATEGORY_BROWSABLE);
+                intent.setData(Uri.parse("http:172.16.87.101:8000/logingarage"));
+                startActivity(intent);
+            }
+
+
+        });
     }
 }

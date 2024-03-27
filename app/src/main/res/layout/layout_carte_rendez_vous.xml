@@ -63,12 +63,12 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvServices"
-            android:layout_width="366dp"
+            android:layout_width="match_parent"
             android:layout_height="270dp"
             android:padding="10dp" />
 
         <LinearLayout
-            android:layout_width="364dp"
+            android:layout_width="match_parent"
             android:layout_height="252dp"
             android:orientation="vertical">
 
@@ -78,10 +78,11 @@
                 android:layout_height="55dp"
                 android:backgroundTint="@color/white"
                 android:drawableLeft="@drawable/ic_phone2"
+                android:gravity="center"
                 android:text="Appeler le client"
+
                 android:textColor="@color/black"
                 android:textSize="20sp"
-
                 android:textStyle="bold"
                 app:cornerRadius="0dp" />
 
@@ -89,22 +90,22 @@
                 android:id="@+id/btnRDVbientotTermine"
                 android:layout_width="match_parent"
                 android:layout_height="59dp"
+                android:backgroundTint="@color/white"
                 android:text="Rendez-vous bientôt terminé"
+                android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:backgroundTint="@color/white"
-                android:textColor="@color/black"
                 app:cornerRadius="0dp" />
 
             <Button
                 android:id="@+id/btnRendezVousTermine"
-                android:layout_width="364dp"
+                android:layout_width="match_parent"
                 android:layout_height="wrap_content"
+                android:backgroundTint="@color/white"
                 android:text="Rendez-vous terminé"
+                android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
-                android:backgroundTint="@color/white"
-                android:textColor="@color/black"
                 app:cornerRadius="0dp" />
 
             <Button

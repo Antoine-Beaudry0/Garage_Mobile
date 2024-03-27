@@ -5,19 +5,19 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/ic_home"
-        android:title="RendezVous" />
+        android:title="Encours" />
     <item
         android:id="@+id/fragment_rendezvousconfirmer2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/ic_calender"
-        android:title="RDVEncours" />
+        android:title="RDVConfirmé" />
     <item
         android:id="@+id/fragment_ajouter_rdv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/baseline_add_24"
-        android:title="Ajouter" />
+        android:title="AjouterRDV" />
 
     <item
         android:id="@+id/fragment_RDVNonConfirme"

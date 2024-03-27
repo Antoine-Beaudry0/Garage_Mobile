@@ -42,7 +42,7 @@
 
         <TimePicker
             android:id="@+id/time_picker_start"
-            android:layout_width="360dp"
+            android:layout_width="match_parent"
             android:layout_height="160dp"
             android:scaleX="0.8"
             android:scaleY="0.8"
@@ -58,7 +58,7 @@
 
         <TimePicker
             android:id="@+id/time_picker_end"
-            android:layout_width="360dp"
+            android:layout_width="match_parent"
             android:layout_height="160dp"
             android:scaleX="0.8"
             android:scaleY="0.8"
