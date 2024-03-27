@@ -44,8 +44,6 @@ public interface InterfaceServeur {
     @PATCH("/api/rendezvous/terminer/{id}")
     Call<ReponseServeur> termine(@Path("id") String id);
 
-    @PATCH("/api/rendezvous/terminer/{id}")
-    Call<ResponseBody> termine2(@Path("id") String id);
     @PATCH("/api/rendezvous/confirmer/{id}")
     Call<ReponseServeur> confirme(@Path("id") String id);
 

@@ -32,6 +32,11 @@ import retrofit2.Response;
 
 public class AdapterListeRendezVous extends RecyclerView.Adapter {
 
+    public interface InterfaceListeRDV{
+        public void refresh();
+    }
+
+    InterfaceListeRDV interfaceListeRDV;
      List<Rendez_Vous> rendezVousList;
      Context context;
 
@@ -66,8 +71,9 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
         hidebutt = hide;
     }
 
-
-
+    public void setInterfaceListeRDV(InterfaceListeRDV interfaceListeRDV) {
+        this.interfaceListeRDV = interfaceListeRDV;
+    }
 
     public void suprimerRDV(int position)
     {
@@ -207,9 +213,10 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
                         @Override
                         public void onResponse(Call<ReponseServeur> call, Response<ReponseServeur> response) {
                             if (response.isSuccessful()) {
-                                Rendez_Vous rendezVous = response.body().getSingledata();
+                                /*Rendez_Vous rendezVous = response.body().getSingledata();
                                 rendezVousList.set(pos, rendezVous);
-                                notifyDataSetChanged();
+                                notifyDataSetChanged();*/
+                                interfaceListeRDV.refresh();
 
                             } else {
                                 Toast.makeText(itemView.getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();

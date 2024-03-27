@@ -29,11 +29,12 @@ import retrofit2.Callback;
 import retrofit2.Response;
 
 
-public class fragment_RendezvousEncoursV extends Fragment {
+public class fragment_RendezvousEncoursV extends Fragment implements AdapterListeRendezVous.InterfaceListeRDV {
 
 
     RecyclerView recyclerViewRendezVousEncours;
 
+    AdapterListeRendezVous.InterfaceListeRDV interfaceListeRDV;
 
 
     public fragment_RendezvousEncoursV() {
@@ -62,6 +63,7 @@ public class fragment_RendezvousEncoursV extends Fragment {
         recyclerViewRendezVousEncours = view.findViewById(R.id.rvRendezvousEncours);
         recyclerViewRendezVousEncours.setLayoutManager(new LinearLayoutManager(getContext()));
 
+        interfaceListeRDV = this;
         getRendezVousEncours();
 
     }
@@ -81,6 +83,7 @@ public class fragment_RendezvousEncoursV extends Fragment {
 
                     AdapterListeRendezVous adapterRendezVous = new AdapterListeRendezVous(listeRendezVous, getContext());
                     adapterRendezVous.setHideB(true);
+                    adapterRendezVous.setInterfaceListeRDV(interfaceListeRDV);
                     recyclerViewRendezVousEncours.setAdapter(adapterRendezVous);
                 } else {
                     Toast.makeText(getContext(), "Une erreur s'est produite", Toast.LENGTH_SHORT).show();
@@ -94,5 +97,10 @@ public class fragment_RendezvousEncoursV extends Fragment {
 
             }
         });
+    }
+
+    @Override
+    public void refresh() {
+        getRendezVousEncours();
     }
 }
