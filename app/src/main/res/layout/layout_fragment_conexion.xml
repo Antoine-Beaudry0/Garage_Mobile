@@ -65,7 +65,9 @@
             android:backgroundTint="@color/white"
             android:text="Connexion"
             android:textColor="@color/black"
-            android:textSize="20sp" />
+            android:textSize="20sp" />ent"
+            android:text="Connexion" />
+
 
         <TextView
             android:id="@+id/idou"
