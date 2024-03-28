@@ -8,8 +8,11 @@ import android.view.ViewGroup;
 import android.widget.Button;
 import android.widget.EditText;
 import android.widget.TimePicker;
+import android.widget.Toast;
 
 import androidx.fragment.app.Fragment;
+import androidx.navigation.NavController;
+import androidx.navigation.Navigation;
 
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -114,12 +117,15 @@ public class AjouterRDV extends Fragment {
 
                 // Send the data to your Laravel API
                 sendDataToApi(comment, dateRDV, startTime, endTime);
+                NavController controller = Navigation.findNavController(view);
+                controller.navigate(R.id.fromAddToEncours);
+                Toast.makeText(getContext(), "Rendez-vous créé avec succès", Toast.LENGTH_SHORT).show();
             }
 
         });
     }
 
-    private void sendDataToApi(String comment, String expiryDate, String startTime, String endTime) {
+    private void sendDataToApi(String comment, String dateRDV, String startTime, String endTime) {
         // Create Retrofit instance
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://172.16.87.101:8000/")
@@ -130,7 +136,7 @@ public class AjouterRDV extends Fragment {
         JSONObject postData = new JSONObject();
         try {
             postData.put("comment", comment);
-            postData.put("expiry_date", expiryDate);
+            postData.put("dateRDV", dateRDV);
             postData.put("start_time", startTime);
             postData.put("end_time", endTime);
         } catch (JSONException e) {

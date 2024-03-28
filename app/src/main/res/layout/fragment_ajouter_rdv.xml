@@ -89,7 +89,7 @@
             android:id="@+id/et_comment"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginVertical="25dp"
+            android:layout_marginVertical="0dp"
             android:hint="Commentaires"
             android:inputType="textMultiLine" />
 
@@ -98,7 +98,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_gravity="center_horizontal"
-            android:layout_marginTop="0dp"
+            android:layout_marginTop="15dp"
             android:text="Enregistrer" />
 
     </LinearLayout>
