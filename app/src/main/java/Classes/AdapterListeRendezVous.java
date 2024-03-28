@@ -99,12 +99,12 @@ public class AdapterListeRendezVous extends RecyclerView.Adapter {
         Rendez_Vous rendezVous = rendezVousList.get(position);
         VoitureDetails voitureDetails = rendezVous.getVoitureDetails();
 
-        rendezVousViewHolder.tvDateHeureDebut.setText(formatDate(rendezVousList.get(position).getDateHeureDebut()));
-        rendezVousViewHolder.tvDateHeureFin.setText(formatDate(rendezVousList.get(position).getDateHeureFin()));
-        rendezVousViewHolder.tvTel.setText(rendezVousList.get(position).getTel());
-        rendezVousViewHolder.tvmarque.setText(voitureDetails.getMarque());
-       rendezVousViewHolder.tvmodele.setText(voitureDetails.getModele());
-        rendezVousViewHolder.tvId.setText(rendezVousList.get(position).getId());
+        rendezVousViewHolder.tvDateHeureDebut.setText("Début: " + formatDate(rendezVousList.get(position).getDateHeureDebut()));
+        rendezVousViewHolder.tvDateHeureFin.setText(formatDate( "Fin: " + rendezVousList.get(position).getDateHeureFin()));
+        rendezVousViewHolder.tvTel.setText("Téléphone: "+ rendezVousList.get(position).getTel());
+        rendezVousViewHolder.tvmarque.setText("Marque: " + voitureDetails.getMarque());
+       rendezVousViewHolder.tvmodele.setText("Modèle: " + voitureDetails.getModele());
+        rendezVousViewHolder.tvId.setText("Id: " + rendezVousList.get(position).getId());
 
 
 
