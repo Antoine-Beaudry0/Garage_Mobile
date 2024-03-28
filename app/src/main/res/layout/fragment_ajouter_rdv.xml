@@ -18,7 +18,7 @@
             android:id="@+id/Date"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date du rendez-vous:"
+            android:text="@string/date_du_rendez_vous"
             android:textColor="@color/black"
             android:textSize="26sp" />
 
@@ -36,7 +36,7 @@
             android:id="@+id/textViewDateHeureDebut"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date et heure de début:"
+            android:text="@string/date_et_heure_du_rendez_vous"
             android:textColor="@color/black"
             android:textSize="26sp" />
 
@@ -52,7 +52,7 @@
             android:id="@+id/textViewDateHeureFin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date et heure de fin:"
+            android:text="@string/date_et_heure_de_fin"
             android:textColor="@color/black"
             android:textSize="26sp" />
 

@@ -5,30 +5,30 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/ic_home"
-        android:title="En Cours" />
+        android:title="@string/en_cours" />
     <item
         android:id="@+id/fragment_rendezvousconfirmer2"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/ic_calender"
-        android:title="Confirmé" />
+        android:title="@string/confirm" />
     <item
         android:id="@+id/fragment_ajouter_rdv"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/baseline_add_24"
-        android:title="Ajouter" />
+        android:title="@string/ajouter" />
 
     <item
         android:id="@+id/fragment_RDVNonConfirme"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@android:drawable/btn_dialog"
-        android:title="À Confirmer" />
+        android:title="@string/confirmer" />
     <item
         android:id="@+id/fragment_Profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/ic_setting"
-        android:title="Profile" />
+        android:title="@string/profile" />
 </menu>

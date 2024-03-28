@@ -17,7 +17,7 @@
             android:id="@+id/textViewDateHeureDebut"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date et heure de début:"
+            android:text="@string/date_et_heure_du_rendez_vous"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
@@ -25,7 +25,7 @@
             android:id="@+id/textViewDateHeureFin"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Date et heure de fin:"
+            android:text="@string/date_et_heure_de_fin"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
@@ -33,7 +33,7 @@
             android:id="@+id/tvmarque"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="marque"
+            android:text="@string/marque"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
@@ -41,7 +41,7 @@
             android:id="@+id/tvmodele"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="modele"
+            android:text="@string/modele"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
@@ -49,7 +49,7 @@
             android:id="@+id/tvtel"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Telephone"
+            android:text="@string/telephone"
             android:textColor="@color/white"
             android:textSize="16sp" />
 
@@ -79,7 +79,7 @@
                 android:backgroundTint="@color/white"
                 android:drawableLeft="@drawable/ic_phone2"
                 android:gravity="center"
-                android:text="Appeler le client"
+                android:text="@string/appeler_le_client"
 
                 android:textColor="@color/black"
                 android:textSize="20sp"
@@ -91,7 +91,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="59dp"
                 android:backgroundTint="@color/white"
-                android:text="Rendez-vous bientôt terminé"
+                android:text="@string/rendez_vous_bient_t_termin"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -102,7 +102,7 @@
                 android:layout_width="match_parent"
                 android:layout_height="wrap_content"
                 android:backgroundTint="@color/white"
-                android:text="Rendez-vous terminé"
+                android:text="@string/rendez_vous_termin"
                 android:textColor="@color/black"
                 android:textSize="20sp"
                 android:textStyle="bold"
@@ -114,7 +114,7 @@
                 android:layout_height="58dp"
                 android:backgroundTint="@color/red"
                 android:drawableLeft="@drawable/ic_delete"
-                android:text="Supprimer"
+                android:text="@string/supprimer"
                 android:textColor="@color/white"
                 android:textSize="20sp"
                 android:textStyle="bold"

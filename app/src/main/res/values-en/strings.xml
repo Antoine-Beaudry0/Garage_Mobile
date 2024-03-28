@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <string name="date_du_rendez_vous">Appointment date</string>
+    <string name="date_et_heure_du_rendez_vous">Date and Time of Appointment</string>
+    <string name="date_et_heure_de_fin">Date and Time of End</string>
+    <string name="lat">Latitude</string>
+    <string name="lon">Longitude</string>
+    <string name="altitude">altitude</string>
+    <string name="exactitude">Accuracy</string>
+    <string name="vitesse">Speed</string>
+    <string name="capteur">Sensor</string>
+    <string name="cell_tower_wifi">cell Tower + wifi</string>
+    <string name="updates">Updates</string>
+    <string name="off">off</string>
+    <string name="address">adresse</string>
+    <string name="marque">mark</string>
+    <string name="modele">model</string>
+    <string name="telephone">Phone</string>
+    <string name="appeler_le_client">Call the Client</string>
+    <string name="rendez_vous_bient_t_termin">Appointment Finshing Soon</string>
+    <string name="rendez_vous_termin">Appointment Finished</string>
+    <string name="supprimer">Delete</string>
+    <string name="mon_profil">Phone</string>
+    <string name="adresse_email">Email Adresse</string>
+    <string name="mot_de_passe">Password</string>
+    <string name="connexion">Connection</string>
+    <string name="vous_n_tes_pas_membre">You are not a member</string>
+    <string name="inscription">Registration</string>
+    <string name="en_cours">Outstanding</string>
+    <string name="confirm">Confirm</string>
+    <string name="ajouter">Add</string>
+    <string name="confirmer">To be Confirmed</string>
+    <string name="profile">Profile</string>
+    <string name="app_name">Garage-Mobile</string>
+
+
+
+
+
+
+
+</resources>

@@ -1,5 +1,36 @@
 <resources>
-    <string name="app_name">Garage_mobile2</string>
-    <!-- TODO: Remove or change this placeholder text -->
-    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="date_du_rendez_vous">Date du rendez-vous:</string>
+    <string name="date_et_heure_du_rendez_vous">Date et heure de début:</string>
+    <string name="date_et_heure_de_fin">Date et heure de fin:</string>
+    <string name="lat">Latitude:</string>
+    <string name="lon">Longitude:</string>
+    <string name="altitude">Altitude</string>
+    <string name="exactitude">exactitude:</string>
+    <string name="vitesse">Vitesse:</string>
+    <string name="capteur">Capteur:</string>
+    <string name="cell_tower_wifi">cell Tower + wifi</string>
+    <string name="updates">Mises à jour:</string>
+    <string name="off">eteint</string>
+    <string name="address">Adress</string>
+    <string name="marque">marque</string>
+    <string name="modele">modele</string>
+    <string name="telephone">Telephone</string>
+    <string name="appeler_le_client">Appeler le client</string>
+    <string name="rendez_vous_bient_t_termin">Rendez-vous bientôt terminé</string>
+    <string name="rendez_vous_termin">Rendez-vous terminé</string>
+    <string name="supprimer">Supprimer</string>
+    <string name="mon_profil">Mon Profil</string>
+    <string name="adresse_email">Adresse Email</string>
+    <string name="mot_de_passe">Mot de passe</string>
+    <string name="connexion">Connexion</string>
+    <string name="vous_n_tes_pas_membre">Vous n\'êtes pas membre?</string>
+    <string name="inscription">Inscription</string>
+    <string name="en_cours">En Cours</string>
+    <string name="confirm">Confirmé</string>
+    <string name="ajouter">Ajouter</string>
+    <string name="confirmer">À Confirmer</string>
+    <string name="profile">Profil</string>
+    <string name="app_name">Garage-Mobile</string>
+
 </resources>

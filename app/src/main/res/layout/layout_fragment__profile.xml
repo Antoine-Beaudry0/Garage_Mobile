@@ -24,7 +24,7 @@
             android:id="@+id/profil"
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:text="Mon Profil"
+            android:text="@string/mon_profil"
             android:textAlignment="center"
             android:textColor="@color/white"
             android:textSize="34sp" />
