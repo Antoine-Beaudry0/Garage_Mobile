@@ -33,7 +33,7 @@ public interface InterfaceServeur {
     @GET("/api/rendezvous/nonconfirme")
     Call<ReponseServeur> getListeRendezvousnonConfirme();
 
-    @POST("/rendezvous/ajouter")
+    @POST("/api/rendezvous/ajouter")
     Call<ResponseBody> ajouterRDV(@Body RequestBody body);
 
     // la route pour appeler la notifications

@@ -87,11 +87,5 @@ public class fragment_RDVNonConfirme extends Fragment {
                 }
             }
         });
-
-
-
     }
-
-
-
 }

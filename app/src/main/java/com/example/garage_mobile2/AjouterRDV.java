@@ -85,9 +85,10 @@ public class AjouterRDV extends Fragment {
 
         // Find your UI components
         EditText etComment = view.findViewById(R.id.et_comment);
-        EditText etCreditCardExpiry = view.findViewById(R.id.et_credit_card_expiry);
         TimePicker timePickerStart = view.findViewById(R.id.time_picker_start);
         TimePicker timePickerEnd = view.findViewById(R.id.time_picker_end);
+        EditText etMonth = view.findViewById(R.id.et_month);
+        EditText etYear = view.findViewById(R.id.et_year);
         Button btnSave = view.findViewById(R.id.btn_save);
 
         btnSave.setOnClickListener(new View.OnClickListener() {
@@ -95,22 +96,24 @@ public class AjouterRDV extends Fragment {
             public void onClick(View v) {
                 // Collect data from UI components
                 String comment = etComment.getText().toString();
-                String expiryDate = etCreditCardExpiry.getText().toString();
                 // Assuming you want the time in HH:mm format
                 int startHour = timePickerStart.getCurrentHour();
                 int startMinute = timePickerStart.getCurrentMinute();
                 String startTime = String.format(Locale.getDefault(), "%02d:%02d", startHour, startMinute);
+                String month = etMonth.getText().toString();
+                String year = etYear.getText().toString();
+                String dateRDV = month + "/" + year;
 
                 int endHour = timePickerEnd.getCurrentHour();
                 int endMinute = timePickerEnd.getCurrentMinute();
                 String endTime = String.format(Locale.getDefault(), "%02d:%02d", endHour, endMinute);
 
                 // Print the collected data
-                Log.d("RDV Data", "Comment: " + comment + ", Expiry Date: " + expiryDate +
+                Log.d("RDV Data", "Comment: " + comment + ", Date du RDV: " + dateRDV +
                         ", Start Time: " + startTime + ", End Time: " + endTime);
 
                 // Send the data to your Laravel API
-                sendDataToApi(comment, expiryDate, startTime, endTime);
+                sendDataToApi(comment, dateRDV, startTime, endTime);
             }
 
         });
@@ -145,7 +148,7 @@ public class AjouterRDV extends Fragment {
             @Override
             public void onResponse(Call<ResponseBody> call, Response<ResponseBody> response) {
                 if (response.isSuccessful()) {
-                    // Handle successful response
+
                     try {
                         String responseData = response.body().string();
                         // Process the response data (e.g., log it or update UI)
