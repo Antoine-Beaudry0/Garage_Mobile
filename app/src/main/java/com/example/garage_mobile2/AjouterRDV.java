@@ -38,7 +38,6 @@ import retrofit2.converter.gson.GsonConverterFactory;
 public class AjouterRDV extends Fragment {
 
     // TODO: Rename parameter arguments, choose names that match
-    // the fragment initialization parameters, e.g. ARG_ITEM_NUMBER
     private static final String ARG_PARAM1 = "param1";
     private static final String ARG_PARAM2 = "param2";
 
@@ -46,9 +45,7 @@ public class AjouterRDV extends Fragment {
     private String mParam1;
     private String mParam2;
 
-    public AjouterRDV() {
-        // Required empty public constructor
-    }
+    public AjouterRDV() {}
 
     /**
      * Use this factory method to create a new instance of
@@ -79,60 +76,64 @@ public class AjouterRDV extends Fragment {
     @Override
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
-        // Inflate the layout for this fragment
         return inflater.inflate(R.layout.fragment_ajouter_rdv, container, false);
     }
     @Override
     public void onViewCreated(View view, Bundle savedInstanceState) {
         super.onViewCreated(view, savedInstanceState);
 
-        // Find your UI components
         EditText etComment = view.findViewById(R.id.et_comment);
         TimePicker timePickerStart = view.findViewById(R.id.time_picker_start);
         TimePicker timePickerEnd = view.findViewById(R.id.time_picker_end);
         EditText etMonth = view.findViewById(R.id.et_month);
-        EditText etYear = view.findViewById(R.id.et_year);
+        EditText etYear = view.findViewById(R.id.et_day);
         Button btnSave = view.findViewById(R.id.btn_save);
 
         btnSave.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                // Collect data from UI components
                 String comment = etComment.getText().toString();
-                // Assuming you want the time in HH:mm format
                 int startHour = timePickerStart.getCurrentHour();
                 int startMinute = timePickerStart.getCurrentMinute();
                 String startTime = String.format(Locale.getDefault(), "%02d:%02d", startHour, startMinute);
-                String month = etMonth.getText().toString();
-                String year = etYear.getText().toString();
-                String dateRDV = month + "/" + year;
-
                 int endHour = timePickerEnd.getCurrentHour();
                 int endMinute = timePickerEnd.getCurrentMinute();
                 String endTime = String.format(Locale.getDefault(), "%02d:%02d", endHour, endMinute);
 
-                // Print the collected data
-                Log.d("RDV Data", "Comment: " + comment + ", Date du RDV: " + dateRDV +
-                        ", Start Time: " + startTime + ", End Time: " + endTime);
+                String day = etYear.getText().toString();
+                String month = etMonth.getText().toString();
+                int dayInt = Integer.parseInt(day);
+                if (dayInt < 1 || dayInt > 31) {
+                    Toast.makeText(getContext(), "Le jour doit être compris entre 1 et 31", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                int monthInt = Integer.parseInt(month);
+                if (monthInt < 1 || monthInt > 12) {
+                    Toast.makeText(getContext(), "Le mois doit être compris entre 1 et 12", Toast.LENGTH_SHORT).show();
+                    return;
+                }
+                if (endHour < startHour || (endHour == startHour && endMinute <= startMinute)) {
+                    Toast.makeText(getContext(), "L'heure de fin doit être après l'heure de début", Toast.LENGTH_SHORT).show();
+                    return;
+                }
 
-                // Send the data to your Laravel API
+                String dateRDV = day + "/" + month;
                 sendDataToApi(comment, dateRDV, startTime, endTime);
                 NavController controller = Navigation.findNavController(view);
                 controller.navigate(R.id.fromAddToEncours);
                 Toast.makeText(getContext(), "Rendez-vous créé avec succès", Toast.LENGTH_SHORT).show();
             }
-
         });
+
     }
 
     private void sendDataToApi(String comment, String dateRDV, String startTime, String endTime) {
-        // Create Retrofit instance
+
         Retrofit retrofit = new Retrofit.Builder()
                 .baseUrl("http://172.16.87.101:8000/")
                 .addConverterFactory(GsonConverterFactory.create())
                 .build();
 
-        // Create JSON object
         JSONObject postData = new JSONObject();
         try {
             postData.put("comment", comment);
@@ -142,11 +143,8 @@ public class AjouterRDV extends Fragment {
         } catch (JSONException e) {
             e.printStackTrace();
         }
-
-        // Prepare the Request Body from JSON
         RequestBody body = RequestBody.create(MediaType.parse("application/json"), postData.toString());
 
-        // Get Retrofit instance of ApiService
         InterfaceServeur service = retrofit.create(InterfaceServeur.class);
         Call<ResponseBody> call = service.ajouterRDV(body);
 
@@ -157,18 +155,16 @@ public class AjouterRDV extends Fragment {
 
                     try {
                         String responseData = response.body().string();
-                        // Process the response data (e.g., log it or update UI)
                     } catch (IOException e) {
                         e.printStackTrace();
                     }
                 } else {
-                    // Handle request errors
+                    //
                 }
             }
 
             @Override
             public void onFailure(Call<ResponseBody> call, Throwable t) {
-                // Handle failure
                 t.printStackTrace();
             }
         });
