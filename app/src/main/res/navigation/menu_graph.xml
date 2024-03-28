@@ -34,9 +34,5 @@
         android:id="@+id/fragment_ajouter_rdv"
         android:name="com.example.garage_mobile2.AjouterRDV"
         android:label="fragment_ajouter_rdv"
-        tools:layout="@layout/fragment_ajouter_rdv" >
-        <action
-            android:id="@+id/fromAddToEncours"
-            app:destination="@id/fragment_RendezvousEncoursV" />
-    </fragment>
+        tools:layout="@layout/fragment_ajouter_rdv" />
 </navigation>
