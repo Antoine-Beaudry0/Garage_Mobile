@@ -102,26 +102,39 @@ public class AjouterRDV extends Fragment {
 
                 String day = etYear.getText().toString();
                 String month = etMonth.getText().toString();
-                int dayInt = Integer.parseInt(day);
-                if (dayInt < 1 || dayInt > 31) {
-                    Toast.makeText(getContext(), "Le jour doit être compris entre 1 et 31", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                int monthInt = Integer.parseInt(month);
-                if (monthInt < 1 || monthInt > 12) {
-                    Toast.makeText(getContext(), "Le mois doit être compris entre 1 et 12", Toast.LENGTH_SHORT).show();
-                    return;
-                }
-                if (endHour < startHour || (endHour == startHour && endMinute <= startMinute)) {
-                    Toast.makeText(getContext(), "L'heure de fin doit être après l'heure de début", Toast.LENGTH_SHORT).show();
+
+                // Valider que les champs jour et mois ne sont pas vides
+                if (day.isEmpty() || month.isEmpty()) {
+                    Toast.makeText(getContext(), "Le jour et le mois sont requis", Toast.LENGTH_SHORT).show();
                     return;
                 }
 
-                String dateRDV = day + "/" + month;
-                sendDataToApi(comment, dateRDV, startTime, endTime);
-                NavController controller = Navigation.findNavController(view);
-                controller.navigate(R.id.fromAddToEncours);
-                Toast.makeText(getContext(), "Rendez-vous créé avec succès", Toast.LENGTH_SHORT).show();
+                try {
+                    int dayInt = Integer.parseInt(day);
+                    int monthInt = Integer.parseInt(month);
+
+                    // Continuer les validations comme avant
+                    if (dayInt < 1 || dayInt > 31) {
+                        Toast.makeText(getContext(), "Le jour doit être compris entre 1 et 31", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    if (monthInt < 1 || monthInt > 12) {
+                        Toast.makeText(getContext(), "Le mois doit être compris entre 1 et 12", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+                    if (endHour < startHour || (endHour == startHour && endMinute <= startMinute)) {
+                        Toast.makeText(getContext(), "L'heure de fin doit être après l'heure de début", Toast.LENGTH_SHORT).show();
+                        return;
+                    }
+
+                    String dateRDV = day + "/" + month;
+                    sendDataToApi(comment, dateRDV, startTime, endTime);
+                    NavController controller = Navigation.findNavController(view);
+                    controller.navigate(R.id.fromAddToEncours);
+                    Toast.makeText(getContext(), "Rendez-vous créé avec succès", Toast.LENGTH_SHORT).show();
+                } catch (NumberFormatException e) {
+                    Toast.makeText(getContext(), "Le jour et le mois doivent être des nombres valides", Toast.LENGTH_SHORT).show();
+                }
             }
         });
 
