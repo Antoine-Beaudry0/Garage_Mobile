@@ -117,6 +117,8 @@ public class AjouterRDV extends Fragment {
 
                 // Send the data to your Laravel API
                 sendDataToApi(comment, dateRDV, startTime, endTime);
+                NavController controller = Navigation.findNavController(view);
+                controller.navigate(R.id.fromAddToEncours);
                 Toast.makeText(getContext(), "Rendez-vous créé avec succès", Toast.LENGTH_SHORT).show();
             }
 

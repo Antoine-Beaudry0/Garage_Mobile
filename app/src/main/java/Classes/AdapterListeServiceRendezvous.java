@@ -49,12 +49,12 @@ public class AdapterListeServiceRendezvous extends RecyclerView.Adapter {
         AdapterListeServiceRendezvous.ServiceViewHolder serviceViewHolder = (AdapterListeServiceRendezvous.ServiceViewHolder) holder;
 
 
-        serviceViewHolder.tvTitreService.setText("Prix: " + serviceJsonList.get(position).getTitre());
-        serviceViewHolder.tvPrestation.setText("Prestation: " + serviceJsonList.get(position).getId_prestation_String());
-        serviceViewHolder.tvtype.setText("Type: " + serviceJsonList.get(position).getType());
-        serviceViewHolder.tvposition.setText("Position: " + serviceJsonList.get(position).getPosition_String());
-        serviceViewHolder.tvTempsService.setText("Temps du service: " + serviceJsonList.get(position).getTemps());
-        serviceViewHolder.tvPrixService.setText("Prix du service: " + serviceJsonList.get(position).getPrixString());
+        serviceViewHolder.tvTitreService.setText(serviceJsonList.get(position).getTitre());
+        serviceViewHolder.tvPrestation.setText(serviceJsonList.get(position).getId_prestation_String());
+        serviceViewHolder.tvtype.setText(serviceJsonList.get(position).getType());
+        serviceViewHolder.tvposition.setText(serviceJsonList.get(position).getPosition_String());
+        serviceViewHolder.tvTempsService.setText(serviceJsonList.get(position).getTemps());
+        serviceViewHolder.tvPrixService.setText(serviceJsonList.get(position).getPrixString());
         //serviceViewHolder.tvChosen.setText(String.valueOf(serviceJsonList.get(position).isChosen()));
 
 
